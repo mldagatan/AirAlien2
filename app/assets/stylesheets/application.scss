@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "toastr";
+@import "font-awesome";
 
 body {
 	color: #565a5c;
@@ -55,6 +56,12 @@ body {
 	background-color: #edefed;
 	font-size: 18px;
 	font-weight: 400;
+}
+
+.btn-bordered{
+	border-color: #c4c4c4;
+	background: white;
+	color: #484848;
 }
 
 .row-space-1 {
@@ -131,3 +138,44 @@ body {
 	font-weight: bold;
 	text-decoration: none;
 }
+
+hr {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 0;
+    border-top: 1px solid #dce0e0;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    line-height: 1.1;
+    text-rendering: optimizelegibility;
+}
+
+/* Modal Login */
+#gh-login-form {max-width: 360px; margin:20px auto;}
+#modal-gohiso-login .modal-dialog {max-width: 420px}
+
+.btn-facebook, .btn-facebook:hover, .btn-facebook:focus {
+    border-color: #3B5998;
+    background-color: #3B5998;
+    color: #fff;
+}
+.signup-or-separator {
+    background: none;
+    height: 34px;
+    position: relative;
+    text-align: center;
+}
+.signup-or-separator--text {
+    background-color: #fff;
+    display: inline-block;
+    padding: 8px;
+}
+.signup-or-separator hr {
+    margin: -24px auto 10px;
+    width: 100%;
+}
+.btn-google i {
+	color: #DB3236;
+}
+
