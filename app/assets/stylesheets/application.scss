@@ -3,14 +3,16 @@
 @import "toastr";
 @import "font-awesome";
 @import "slick";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 body {
-	color: #565a5c;
-	background-color: #FFF;
+    color: #565a5c;
+    background-color: #FFF;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .container {
-	width: 80%;
+    max-width: 1100px;
 }
 
 .navbar-default .navbar-toggle,
@@ -20,28 +22,29 @@ body {
    border-color: #A78A58;
 }
 .navbar-default .navbar-toggle .icon-bar{
-	background-color: #FFF;
-	color: #FFF;
+    background-color: #FFF;
+    color: #FFF;
 }
 
 .navbar-default {
-	background-color: #FFFFFF;
-	border: none;
+    background-color: #FFFFFF;
+    border: none;
 }
 
 .navbar-default .navbar-brand {
-	color: #A78A58;
-	font-size: 2em;
-	font-weight: 400;
+    color: #A78A58;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 .navbar-default .navbar-nav {
-	padding-top: 15px;
+    padding-top: 15px;
 }
 .navbar-default .navbar-nav > li > a {
-	text-transform: uppercase;
-	color:#A78A58;
-	padding:5px 15px;
-	border-radius: 22px
+    text-transform: uppercase;
+    color:#A78A58;
+    padding:5px 15px;
+    border-radius: 22px;
+    font-size: 12px;
 }
 .navbar-default .navbar-nav > li.hilite > a {
    color:#FFF;
@@ -49,119 +52,123 @@ body {
 }
 
 .btn-primary.btn {
-	border: 1px solid #A78A58;
-	border-radius: 20px;
-	font-weight: bold;
-	background-color: #9d8253;
-	color: #fff;
-	padding: 10px 25px 10px 25px;
+    border: 1px solid #A78A58;
+    border-radius: 20px;
+    font-weight: bold;
+    background-color: #9d8253;
+    color: #fff;
+    padding: 10px 25px 10px 25px;
 }
 
 .btn-primary.btn:hover, .btn-primary.btn:focus {
-	border-color: #b0873f;
-	background-color: #9d8354;
-	outline: none;
+    border-color: #b0873f;
+    background-color: #9d8354;
+    outline: none;
 }
 
 .btn-primary.btn:active {
-	border-color: #e00007;
-	background-color: #e00007;
-	outline: none;
+    border-color: #e00007;
+    background-color: #e00007;
+    outline: none;
 }
 
 .btn-default.btn {
-	width: 100%;
-	border-radius: 2px;
-	padding: 10px 0;
-	margin-top: 10px;
+    width: 100%;
+    border-radius: 2px;
+    padding: 10px 0;
+    margin-top: 10px;
 }
 
 .panel-default .panel-heading {
-	color: #565a5c;
-	background-color: #edefed;
-	font-size: 18px;
-	font-weight: 400;
+    color: #565a5c;
+    background-color: #edefed;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .btn-bordered{
-	border-color: #c4c4c4;
-	background: white;
-	color: #484848;
+    border-color: #c4c4c4;
+    background: white;
+    color: #484848;
 }
 
 .row-space-1 {
-	margin-top: 6px;
-	margin-bottom: 6px;
+    margin-top: 6px;
+    margin-bottom: 6px;
 }
 
 .row-space-2 {
-	margin-top: 12px;
-	margin-bottom: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 .row-space-3 {
-	margin-top: 24px;
-	margin-bottom: 24px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.gray-wrapper {
+    background: #EAEAEA;
 }
 
 .description {
-	color: #575757;
-	font-size: 15px;
-	font-weight: 500;
-	line-height: 25px;
+    color: #575757;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 25px;
 }
 
 .avatar-small {
-	width: 28px;
+    width: 28px;
 }
 
 .avatar-medium {
-	width: 48px;
+    width: 48px;
 }
 
 .avatar-large {
-	width: 68px;
+    width: 68px;
 }
 
 .avatar-full {
-	width: 100%;
+    width: 100%;
 }
 
 .form-group {
-	margin-bottom: 25px;
+    margin-bottom: 25px;
 }
 
 .form-control {
-	border-radius: 2px;
-	height: 4rem;
+    border-radius: 2px;
+    height: 4rem;
 }
 
 .sidebar-list {
-	padding-left: 0;
-	list-style: none;
+    padding-left: 0;
+    list-style: none;
 }
 
 .sidebar-item {
-	padding: 10px 0;
-	font-size: 16px;
-	color: #82888a;
-	border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #82888a;
+    border-bottom: 1px solid #ccc;
 }
 
 .sidebar-link {
-	color: #82888a;
-	text-decoration: none;
+    color: #82888a;
+    text-decoration: none;
 }
 
 .sidebar-link:hover, .sidebar-link:focus {
-	color: #cacccd;
-	text-decoration: none;
+    color: #cacccd;
+    text-decoration: none;
 }
 
 .active.sidebar-link {
-	color: #565a5c;
-	font-weight: bold;
-	text-decoration: none;
+    color: #565a5c;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 hr {
@@ -175,6 +182,13 @@ hr {
     line-height: 1.1;
     text-rendering: optimizelegibility;
 }
+.brand-color{
+    color:#A78A58;
+}
+.brand-bgcolor{
+    background-color:#A78A58;
+}
+.badge-gold {background-color:#A78A58; color:#FFF;}
 
 /* Modal Login */
 #gh-login-form {max-width: 360px; margin:20px auto;}
@@ -201,6 +215,52 @@ hr {
     width: 100%;
 }
 .btn-google i {
-	color: #DB3236;
+    color: #DB3236;
 }
+
+/* HOME > Hero */
+.hero-quicksearch {margin:55px 0;}
+.hero-quicksearch h1 {font-size: 4.5em; font-weight: bold}
+.ghs-slider {position: relative;}
+.ghs-slider .item {max-width: 190px}
+.ghs-slider .item p {padding:10px 0; font-size: 12px; font-weight: bold}
+.ghs-slider .item .badge { font-size: 14px; padding:4px 12px; }
+
+.slick-prev, .slick-next
+{
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    padding: 0;
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #A78A58;
+    font-size: 1.2em;
+    text-align: center;
+}
+.slick-prev{ left: -40px; }
+.slick-next{ right: -40px; }
+
+#ghscards-justbooked .item{ margin-right: 30px }
+
+/* FOOTER */
+footer {
+    color:#FFF;
+    background: #11192c;
+}
+footer .footer-box {
+    padding:20px 0;
+    min-height: 300px;
+}
+footer .footer-bottom {
+    padding:40px 0;
+    border-top:2px solid #A78A58;
+}
+
 
