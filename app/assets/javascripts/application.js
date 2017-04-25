@@ -16,3 +16,4 @@
 //= require toastr
 //= require turbolinks
 //= require_tree .
+//= require jquery.slick
