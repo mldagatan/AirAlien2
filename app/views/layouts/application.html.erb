@@ -9,15 +9,14 @@
 <body>
 
 	<%= render 'shared/navbar' %>
-
     
 	<%= render 'shared/message' %>
 
-	<div class="container">
-    	<%= yield %>
-    </div>
+  <%= yield %>
     
-   <%= render 'shared/modal_login' %>
+  <%= render 'shared/partial_footerbox' %>
+
+  <%= render 'shared/modal_login' %>
 
 </body>
 </html>

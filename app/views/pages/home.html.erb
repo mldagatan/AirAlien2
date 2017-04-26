@@ -1,10 +1,27 @@
 <div class="container">
-	<div class="row">
-	      <div class="hero-box">
-	          <div class="hero-quicksearch">
-	              <h1 class="brand-color">Elevate your lifestyle</h1>
-	              <h2>Do it the GoHiSo way!</h2>
-	          </div>
-	      </div>
-	</div>
+    <div class="row">
+          <div class="hero-box">
+              <div class="hero-quicksearch">
+                  <h1 class="brand-color">Elevate your lifestyle</h1>
+                  <h2>Do it the GoHiSo way!</h2>
+
+                  <div id="hero-form-search" class="row">
+                      <div class="col-md-6">
+                          <form action="" method="get">
+                            <div class="input-group">
+                              <input name="keyword" type="text" class="form-control keyword input-lg" placeholder="Search...">
+                              <span class="input-group-btn">
+                                <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+                              </span>
+                            </div> 
+                            <input type="hidden" name="doSearch" value="1" />
+                            <input type="hidden" name="page" value="search" />
+                          </form>
+                      </div>                 
+                  </div>  
+
+
+              </div>
+          </div>
+    </div>
 </div>
