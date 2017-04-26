@@ -300,6 +300,10 @@ footer .footer-bottom {
     .card-header h3 {  
        width: 40%;padding-left: 50px;
     }
+    .slick-prev, .slick-next
+    {
+      display: none;    
+    }
 }
 
 /* 480 Breakpoint */
@@ -322,7 +326,7 @@ footer .footer-bottom {
     }
     .slick-prev, .slick-next
     {
-      display: none;    
+      display: none!important;    
     }
 
 }
