@@ -158,6 +158,8 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    select2-rails (4.0.3)
+      thor (~> 0.14)
     sendgrid-rails (2.0.5)
       actionmailer (>= 3.0.0)
       activesupport (>= 2.1.0)
@@ -210,6 +212,7 @@ DEPENDENCIES
   rails (= 4.2.0)
   sass-rails (>= 3.2)
   sdoc (~> 0.4.0)
+  select2-rails
   sendgrid-rails (~> 2.0, >= 2.0.5)
   spring
   sqlite3
