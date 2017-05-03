@@ -42,7 +42,7 @@ gem "font-awesome-rails"
 
 
 gem 'figaro'
-=======
+
 gem "jquery-slick-rails"
 
 gem "select2-rails"
