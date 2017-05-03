@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>AirAlien</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+  <title>GoHiSo</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,15 +14,14 @@
 <body>
 
 	<%= render 'shared/navbar' %>
-
     
 	<%= render 'shared/message' %>
 
-	<div class="container">
-    	<%= yield %>
-    </div>
+  <%= yield %>
     
-   <%= render 'shared/modal_login' %>
+  <%= render 'shared/partial_footerbox' %>
+
+  <%= render 'shared/modal_login' %>
 
 </body>
 </html>

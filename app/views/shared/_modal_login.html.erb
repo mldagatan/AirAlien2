@@ -31,13 +31,17 @@
 
                           <%# if Devise.mappings[:user].rememberable? %>
                             <div class="form-group">
-                              <%= f.check_box :remember_me %> Remember Me
+                              <span class="pull-left"><%= f.check_box :remember_me %> Remember Me</span>
+                              <span class="pull-right">
+                              <%= link_to "Forgot Password", new_user_password_path, :class => "link-forgot" %>
+                              </span>
+                              <br class="clear" />
                             </div>
                           <%# end %>
 
                           <div class="actions text-center">
-                            <%= f.submit "Log in", :class => "btn btn-primary" %>
-                            <%= link_to "Forgot Password", new_user_password_path, :class => "btn btn-primary" %>
+                            <%= f.submit "LOGIN IN", :class => "btn btn-primary btn-block" %>
+                            </p>
                           </div>
 
                       <% end %>

@@ -1,2 +1,175 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+    <div class="row">
+          <div class="hero-box">
+              <div class="hero-quicksearch">
+                  <h1 class="brand-color">Elevate your lifestyle</h1>
+                  <h2>Do it the GoHiSo way!</h2>
+
+                  <div id="hero-form-search" class="row">
+                      <div class="col-md-6">
+                          <form action="" method="get">
+                            <div class="input-group">
+                              <input name="keyword" type="text" class="form-control keyword input-lg" placeholder="Search...">
+                              <span class="input-group-btn">
+                                <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+                              </span>
+                            </div> 
+                            <input type="hidden" name="doSearch" value="1" />
+                            <input type="hidden" name="page" value="search" />
+                          </form>
+                      </div>                 
+                  </div>  
+
+
+              </div>
+          </div>
+    </div>
+</div>
+
+<!--Start: Just Booked -->
+<div class="card-header">
+  <h3>Just booked</h3>
+</div>
+<div class="container">
+    <div id="ghscards-justbooked" class="ghs-slider">
+
+        <div class="item">
+           <a href="#">
+           <img src="<%= image_url('gohiso_slices-03.png') %>" class="" alt="" />
+           </a>
+           <p><span class="badge badge-gold">$100</span> Make your eyebrows on fleek with Bretman Rock..</p>
+        </div>            
+        <div class="item">
+           <a href="#">
+           <img src="<%= image_url('gohiso_slices-04.png') %>" class="" alt="" />
+           </a>
+           <p><span class="badge badge-gold">$150</span> Dance your way out with Deuce Manila's EDM hit..</p>
+        </div>
+        <div class="item">
+           <a href="#">
+           <img src="<%= image_url('gohiso_slices-05.png') %>" class="" alt="" />
+           </a>
+           <p><span class="badge badge-gold">$230</span> Eu eleifend petentium incorrupte cum.</p>
+        </div>            
+        <div class="item">
+           <a href="#">
+           <img src="<%= image_url('gohiso_slices-06.png') %>" class="" alt="" />
+           </a>
+           <p><span class="badge badge-gold">$120</span> Eu eleifend petentium incorrupte cum.</p>
+        </div>           
+        <div class="item">
+           <a href="#">
+           <img src="<%= image_url('gohiso_slices-07.png') %>" class="" alt="" />
+           </a>
+           <p><span class="badge badge-gold">$100</span> Eu eleifend petentium incorrupte cum.</p>
+        </div>
+    </div>
+
+    </div>
+</div>
+<!--/End:  Just Booked -->
+
+
+<!--Start: Featured Influencers -->
+<div id="featured-influencers" class="gray-wrapper">
+    <div class="card-header featured-influencers">
+        <h3>Featured Influencers</h3>
+    </div>
+    <div class="container">  
+          <div id="ghscards-featured" class="ghs-slider">
+              <div class="item">
+                 <a href="#">
+                 <img src="<%= image_url('gohiso_slices-08.png') %>" class="" alt="" />
+                 </a>
+                 <p class="desc">Insert short description about the influencer</p>
+                 <div class="text-center"><button class="btn btn-primary btn-booknow">Book Now</button></div>
+              </div>    
+              <div class="item">
+                 <a href="#">
+                 <img src="<%= image_url('gohiso_slices-09.png') %>" class="" alt="" />
+                 </a>
+                 <p class="desc">Insert short description about the influencer</p>
+                 <div class="text-center"><button class="btn btn-primary btn-booknow">Book Now</button></div>
+              </div>
+              <div class="item">
+                 <a href="#">
+                 <img src="<%= image_url('gohiso_slices-10.png') %>" class="" alt="" />
+                 </a>
+                 <p class="desc">Insert short description about the influencer</p>
+                 <div class="text-center"><button class="btn btn-primary btn-booknow">Book Now</button></div>
+              </div>    
+              <div class="item">
+                 <a href="#">
+                 <img src="<%= image_url('gohiso_slices-11.png') %>" class="" alt="" />
+                 </a>
+                 <p class="desc">Insert short description about the influencer</p>
+                 <div class="text-center"><button class="btn btn-primary btn-booknow">Book Now</button></div>
+              </div>    
+              <div class="item">
+                 <a href="#">
+                 <img src="<%= image_url('gohiso_slices-12.png') %>" class="" alt="" />
+                 </a>
+                 <p class="desc">Insert short description about the influencer</p>
+                 <div class="text-center"><button class="btn btn-primary btn-booknow">Book Now</button></div>
+              </div>            
+
+          </div>
+
+    </div>    
+</div>  
+<!--/End: Featured Influencers -->
+
+<!--Start: Featured Locations -->
+<div id="featured-locations">
+
+      <div class="card-header">
+        <h3>Featured Locations</h3>
+      </div>
+
+      <div class="container">  
+            <div id="ghscards-featured-loc" class="ghs-slider">
+                <div class="item">
+                   <a href="#">
+                   <img src="<%= image_url('gohiso_slices-14.png') %>" class="" alt="" />
+                   </a>
+                   <p class="text-center"><button class="btn btn-primary btn-viewmore">VIEW MORE</button></p>
+                </div> 
+                <div class="item">
+                   <a href="#">
+                   <img src="<%= image_url('gohiso_slices-15.png') %>" class="" alt="" />
+                   </a>
+                   <p class="text-center"><button class="btn btn-primary btn-viewmore">VIEW MORE</button></p>
+                </div> 
+                <div class="item">
+                   <a href="#">
+                   <img src="<%= image_url('gohiso_slices-16.png') %>" class="" alt="" />
+                   </a>
+                   <p class="text-center"><button class="btn btn-primary btn-viewmore">VIEW MORE</button></p>
+                </div> 
+                <div class="item">
+                   <a href="#">
+                   <img src="<%= image_url('gohiso_slices-17.png') %>" class="" alt="" />
+                   </a>
+                   <p class="text-center"><button class="btn btn-primary btn-viewmore">VIEW MORE</button></p>
+                </div> 
+                <div class="item">
+                   <a href="#">
+                   <img src="<%= image_url('gohiso_slices-18.png') %>" class="" alt="" />
+                   </a>
+                   <p class="text-center"><button class="btn btn-primary btn-viewmore">VIEW MORE</button></p>
+                </div>   
+                <div class="item">
+                   <a href="#">
+                   <img src="<%= image_url('gohiso_slices-19.png') %>" class="" alt="" />
+                   </a>
+                   <p class="text-center"><button class="btn btn-primary btn-viewmore">VIEW MORE</button></p>
+                </div>             
+
+            </div>
+
+      </div>    
+</div>  
+<!--/End: Featured Locations -->
+
+
+

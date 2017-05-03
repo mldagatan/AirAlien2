@@ -40,7 +40,13 @@ gem 'omniauth-google-oauth2'
 
 gem "font-awesome-rails"
 
+
 gem 'figaro'
+=======
+gem "jquery-slick-rails"
+
+gem "select2-rails"
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
