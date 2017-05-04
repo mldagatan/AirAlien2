@@ -8,8 +8,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
 
 body {
-    color: #565a5c;
-    background-color: #FFF;
+    color: #FFF;
+    background-color: #282C38;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -20,8 +20,8 @@ body {
 .navbar-default .navbar-toggle,
 .navbar-default .navbar-toggle:hover {
    color:#FFF;
-   background:#A78A58;
-   border-color: #A78A58;
+   background:#EA5B67;
+   border-color: #EA5B67;
 }
 .navbar-default .navbar-toggle .icon-bar{
     background-color: #FFF;
@@ -29,12 +29,12 @@ body {
 }
 
 .navbar-default {
-    background-color: #FFFFFF;
+    background-color: #181a22;
     border: none;
 }
 
 .navbar-default .navbar-brand {
-    color: #A78A58;
+    color: #EA5B67;
     font-size: 2em;
     font-weight: 800;
     padding-left:0;
@@ -44,33 +44,33 @@ body {
 }
 .navbar-default .navbar-nav > li > a {
     text-transform: uppercase;
-    color:#A78A58;
+    color:#EA5B67;
     padding:5px 15px;
     border-radius: 22px
 }
 .navbar-default .navbar-nav > li.hilite > a {
    color:#FFF;
-   background:#A78A58
+   background:#EA5B67
 }
 
 .btn-primary.btn {
-    border: 1px solid #A78A58;
+    border: 1px solid #EA5B67;
     border-radius: 20px;
     font-weight: bold;
-    background-color: #9d8253;
+    background-color: #ea5b67;
     color: #fff;
     padding: 10px 25px 10px 25px;
 }
 
 .btn-primary.btn:hover, .btn-primary.btn:focus {
-    border-color: #A78A58;
-    background-color: #A78A58;
+    border-color: #EA5B67;
+    background-color: #EA5B67;
     outline: none;
 }
 
 .btn-primary.btn:active {
-    border-color: #A78A58;
-    background-color: #A78A58;
+    border-color: #EA5B67;
+    background-color: #EA5B67;
     outline: none;
 }
 
@@ -185,12 +185,12 @@ hr {
     text-rendering: optimizelegibility;
 }
 .brand-color{
-    color:#A78A58;
+    color:#EA5B67;
 }
 .brand-bgcolor{
-    background-color:#A78A58;
+    background-color:#EA5B67;
 }
-.badge-gold {background-color:#A78A58; color:#FFF;}
+.badge-gold {background-color:#EA5B67; color:#FFF;}
 
 /* Modal Login */
 #gh-login-form {max-width: 360px; margin:20px auto;}
@@ -223,17 +223,17 @@ hr {
 /* HOME > Hero */
 .hero-quicksearch {margin:55px 0;}
 .hero-quicksearch h1 {font-size: 4.5em; font-weight: 700}
-.hero-quicksearch h2 {font-size: 3.8em; color:#333;}
+.hero-quicksearch h2 {font-size: 3.8em; color:#FFF;}
 
 #hero-form-search {margin-top:30px;}
 #hero-form-search .form-control {padding:8px 10px; height: 4.5rem}
 #hero-form-search .form-control,
-#hero-form-search .form-control:focus{border:1px solid #A78A58; box-shadow: none}
+#hero-form-search .form-control:focus{border:1px solid #EA5B67; box-shadow: none}
 
 #hero-form-search .btn i {font-size: 22px}
 
 
-.card-header h3 { background:#A78A58;color:#FFF; padding:10px; margin-bottom: 30px; width: 30%;padding-left: 100px;
+.card-header h3 { background:#EA5B67;color:#FFF; padding:10px; margin-bottom: 30px; width: 30%;padding-left: 100px;
 border-radius: 0 22px 22px 0}
 .ghs-slider {position: relative;}
 .ghs-slider .item {max-width: 190px}
@@ -276,7 +276,7 @@ border-radius: 0 22px 22px 0}
     border: none;
     outline: none;
     background: transparent;
-    color: #A78A58;
+    color: #EA5B67;
     font-size: 1.2em;
     text-align: center;
 }
@@ -294,7 +294,7 @@ footer .footer-box {
 }
 footer .footer-bottom {
     padding:20px 0 10px;
-    border-top:2px solid #A78A58;
+    border-top:2px solid #EA5B67;
 }
 
 .ft-widget-top  {padding:30px 0 40px;}
@@ -309,7 +309,7 @@ footer .footer-bottom {
 .ft-social ul li a {color:#FFF!important; font-size: 1.8em}
 
 .ft-menu {margin-bottom: 20px}
-.ft-menu h4 {text-transform: uppercase; color:#A78A58; font-size: 16px;letter-spacing: 4px; margin-bottom: 30px}
+.ft-menu h4 {text-transform: uppercase; color:#EA5B67; font-size: 16px;letter-spacing: 4px; margin-bottom: 30px}
 .ft-menu-nav a,
 .ft-menu-nav a:focus,
 .ft-menu-nav a:hover {font-size:12px; color:#FFF; text-decoration: none; display:block; letter-spacing: 3px; font-weight: 400; margin-bottom: 20px}
@@ -323,7 +323,7 @@ footer .footer-bottom {
 }
 .select2-dropdown {
     background: #252525;
-    border-color: #A78A58;
+    border-color: #EA5B67;
     border-width: 2px;
 }
 .select2-results__option {
@@ -331,11 +331,11 @@ footer .footer-bottom {
 }
 
 .select2-container--default .select2-selection--single {
-    border: 2px solid #A78A58;
+    border: 2px solid #EA5B67;
     border-radius: 0;
     height:48px;
     position: relative;
-    color:#A78A58;
+    color:#EA5B67;
     background-color: transparent;
 }
 .select2-container--default .select2-results > .select2-results__options {
