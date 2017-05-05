@@ -193,8 +193,8 @@ hr {
 .badge-gold {background-color:#A78A58; color:#FFF;}
 
 /* Modal Login */
-#gh-login-form {max-width: 360px; margin:20px auto;}
-#modal-gohiso-login .modal-dialog {max-width: 420px}
+#gh-login-form, #gh-signup-form {max-width: 360px; margin:20px auto;}
+#modal-gohiso-login .modal-dialog, #modal-gohiso-signup .modal-dialog {max-width: 420px}
 
 .btn-facebook, .btn-facebook:hover, .btn-facebook:focus, .btn-facebook:active {
     border-color: #3B5998;
