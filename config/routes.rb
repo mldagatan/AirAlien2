@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  #get 'influencer/index'
-  get 'influencer', to: 'influencer#index'
+  get 'professionals/index'
+
+  get 'professionals', to: 'professionals#index'
 
   root 'pages#home'
   #root 'home#index'
