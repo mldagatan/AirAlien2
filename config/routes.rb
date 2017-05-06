@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+
   #get 'influencer/index'
   get 'influencer', to: 'influencer#index'
 
@@ -12,4 +14,5 @@ Rails.application.routes.draw do
   			 				  :registrations => 'registrations'
   			 				 }
   resources :users, only: [:show]
+  resources :experiences
 end
