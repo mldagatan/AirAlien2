@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'experiences/index'
+  
+  get 'experiences', to: 'experiences#index'
+
   get 'professionals/index'
 
   get 'professionals', to: 'professionals#index'

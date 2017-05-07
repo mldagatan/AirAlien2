@@ -5,7 +5,7 @@
 @import "slick";
 @import "select2";
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800');
 
 body {
     color: #FFF;
@@ -15,6 +15,17 @@ body {
 
 .container {
     max-width: 1100px;
+}
+
+.btn-rounded {
+    border:2px solid #FFF;
+    border-radius: 22px;
+    padding:5px 15px;
+    color:#FFF;
+}
+
+.btn-rounded:hover, .btn-rounded:active .btn-rounded:focus {
+    color:#FFF; border-color:#FFF;
 }
 
 .navbar-default .navbar-toggle,
@@ -196,8 +207,8 @@ hr {
 .badge-gold {background-color:#EA5B67; color:#FFF;}
 
 /* Modal Login */
-#gh-login-form, #gh-signup-form {max-width: 360px; margin:20px auto;}
-#modal-gohiso-login .modal-dialog, #modal-gohiso-signup .modal-dialog {max-width: 420px}
+#gh-login-form {max-width: 360px; margin:20px auto;}
+#modal-gohiso-login .modal-dialog {max-width: 420px}
 
 .btn-facebook, .btn-facebook:hover, .btn-facebook:focus, .btn-facebook:active {
     border-color: #3B5998;
@@ -291,6 +302,57 @@ border-radius: 0 22px 22px 0}
 }
 .slick-prev{ left: -40px; }
 .slick-next{ right: -40px; }
+
+/* PAGE EXPERIENCE */
+.page-experience {}
+.page-experience .navbar{ margin-bottom: 0}
+.page-experience .hero-banner-img-wrap {height: 600px; background-color:#000; background-size: cover; position: relative;}
+.page-experience .hero-quicksearch {
+    margin: 0;
+    text-align: right;
+    margin-top: 400px;
+}
+
+.exp-header {margin-bottom: 2em}
+.exp-header h2 {font-size: 3em; font-weight: 700; color: #EA5B67; margin: 2em 0 0}
+.exp-header p  {font-size: 1.4em}
+.grid-cards {}
+.grid-cards .item {margin-bottom: 40px}
+.grid-cards .item img {width:100%; margin-bottom:8px; }
+.grid-cards .item .desc {color:#aab1c6; display:block; line-height: 22px;}
+
+.be-host-box {
+    height: 280px;
+    font-weight: 300;
+}
+.be-host-box h2 {
+    font-size: 2.8em;
+    margin-top: 2em
+}
+.be-host-box p,
+.be-host-box .btn {
+    font-size: 1.4em;
+    font-weight: 300
+}
+.be-host-box .btn {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.be-host-box .actionBtn {
+    margin-top: 100px;
+    text-align: right
+}
+
+.gradient-brand {
+    background: rgba(234,91,103,1);
+    background: -moz-linear-gradient(left, rgba(234,91,103,1) 0%, rgba(212,2,100,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(234,91,103,1)), color-stop(100%, rgba(212,2,100,1)));
+    background: -webkit-linear-gradient(left, rgba(234,91,103,1) 0%, rgba(212,2,100,1) 100%);
+    background: -o-linear-gradient(left, rgba(234,91,103,1) 0%, rgba(212,2,100,1) 100%);
+    background: -ms-linear-gradient(left, rgba(234,91,103,1) 0%, rgba(212,2,100,1) 100%);
+    background: linear-gradient(to right, rgba(234,91,103,1) 0%, rgba(212,2,100,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ea5b67', endColorstr='#d40264', GradientType=1 );
+}
 
 /* FOOTER */
 footer {
@@ -404,6 +466,17 @@ footer .select2-results__options {
     .card-header h3 {  
        width: 88%;padding-left: 20px;
     }
+
+    .be-host-box {
+        height: 300px;
+    }
+    .be-host-box h2,
+    .be-host-box p,
+    .be-host-box .actionBtn {
+       margin-top: 20px;
+       text-align: center
+    }
+
     .slick-prev, .slick-next
     {
       display: none;    
@@ -413,14 +486,47 @@ footer .select2-results__options {
     
     .ft-menu {text-align: center;}
     .ft-widget-top .select2-container {margin-bottom: 20px}
-    .footer-bottom {margin:0 15px;}
+    .footer-bottom {margin:0 15px }
 
+}
+
+/* 380 Breakpoint */
+@media only screen and (max-width: 380px) {
+    .page-experience .hero-banner-img-wrap {height: 480px; background-position: center;}
+    .page-experience .hero-quicksearch {
+         margin-top: 300px;
+    }
+    .exp-header h2 {
+        font-size: 2em;
+        margin: 1em 0 0.5em
+    }
+    .exp-header p {
+        font-size: 1.2em
+    }
 }
 
 /* 320 Breakpoint */
 @media only screen and (max-width: 320px) {
-        .ft-logo .brand-logo {font-size: 1em; }
-        .ft-social ul li a {font-size: 1.3em}
+    .ft-logo .brand-logo {font-size: 1em; }
 }
 
 
+/* iphone 6 */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) and (device-aspect-ratio: 375/667) {
+
+}
+
+/* iphone 5 */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) and (device-aspect-ratio: 40/71) { 
+
+}
+
+/* iphone 4 and below */
+@media only screen 
+and (min-device-width : 320px) and (max-device-width : 480px) and (device-aspect-ratio: 2/3) {
+
+}
