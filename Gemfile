@@ -38,6 +38,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-oauth2'
 gem 'omniauth-google-oauth2'
 
+gem 'paperclip'
 gem "font-awesome-rails"
 
 

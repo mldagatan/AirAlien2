@@ -7,21 +7,34 @@ class ExperiencesController < ApplicationController
   end
 
   def show
-  	
+  	@expphotos = @experience.expphotos
   end
 
   def new
+  	@experience = current_user.experiences.build
   end
 
   def edit
-  	
+  	if current_user.id == @experience.user.id
+  		@expphotos = @experience.expphotos
+  	else
+  		redirect_to root_path, notice: "You don't have permission."
+  	end
   end
 
   def create
-  	@experiences = current_user.experiences.build(experience_params)
+  	@experience = current_user.experiences.build(experience_params)
 
   	if @experience.save 
-  		redirect_to @experience, notice: "Saved..."
+
+  		if params[:images]
+  			params[:images].each do [image]
+  				@experience.expphotos.create(image: image)
+  			end
+  		end
+
+  		@expphotos = @experience.expphotos
+  		redirect_to edit_experience_path(@experience), notice: "Saved..."
   	else
   		render :new
  	end
@@ -29,7 +42,15 @@ class ExperiencesController < ApplicationController
 
   def update
   	if @experience.update(experience_params)
-  		redirect_to @experience, notice: "Updated..."
+  		if params[:images]
+  			params[:images].each do [image]
+  				@experience.expphotos.create(image: image)
+  			end
+  		end
+
+  		redirect_to edit_experience_path(@experience), notice: "Updated..."
+
+  		
   	else
   		render :edit
   	end

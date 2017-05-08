@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170506073054) do
+ActiveRecord::Schema.define(version: 20170508120837) do
 
   create_table "experiences", force: :cascade do |t|
     t.string   "day_type"
@@ -26,6 +26,18 @@ ActiveRecord::Schema.define(version: 20170506073054) do
   end
 
   add_index "experiences", ["user_id"], name: "index_experiences_on_user_id"
+
+  create_table "expphotos", force: :cascade do |t|
+    t.integer  "experience_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "expphotos", ["experience_id"], name: "index_expphotos_on_experience_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
