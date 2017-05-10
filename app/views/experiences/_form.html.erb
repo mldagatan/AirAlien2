@@ -1,0 +1,55 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		Create your beautiful experience
+	</div>
+	<div class="panel-body">
+		<div class="container">
+			<%= form_for @experience do |f| %>
+				<div class="row">
+					<div class="col-md-4 select">
+						<div class="form-group">
+							<label>City</label>
+							<%= f.select :city, [["Makati", "Makati"], ["Muntinlupa", "Muntinlupa"], ["Quezon", "Quezon"]], id: "city", prompt: "Select a city", class: "form-control" %>
+						</div>
+					</div>
+
+					<div class="col-md-4 select">
+						<div class="form-group">
+							<label>Type</label>
+							<%= f.select :day_type, [["Single Day", "Single Day"], ["Multiple Days", "Multiple Days"]], id: "day_type", prompt: "Select a type", class: "form-control" %>
+						</div>
+					</div>
+					<div class="col-md-4 select">
+						<div class="form-group">
+							<label>Category</label>
+							<%= f.select :category, [["Arts & Design", "Arts & Design"],["Fashion", "Fashion"],["Entertainment", "Entertainment"],["Sports", "Sports"],["Wellness", "Wellness"],["Nature", "Nature"],["Food & Drink", "Food & Drink"],["Lifestyle", "Lifestyle"],["History", "History"],["Music", "Music"],["Business", "Business"],["Nightlife", "Nightlife"]], id: "category", prompt: "Select a category", class: "form-control" %>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 select">
+						<div class="form-group">
+							<label>Title of Experience</label>
+							<%= f.text_field :experience_name, placeholder: "Name the experience", class: "form-control" %>
+						</div>
+					</div>
+					<div class="col-md-4 select">
+						<div class="form-group">
+							<label>Add a tagline</label>
+							<%= f.text_field :experience_tagline, placeholder: "Write the tagline here", class: "form-control" %>
+						</div>
+					</div>
+					<div class="col-md-4 select">
+						<div class="form-group">
+							<label>Language</label>
+							<%= f.select :language, [["English", "English"], ["Filipino", "Filipino"]], id: "language", prompt: "Select a language", class: "form-control" %>
+						</div>
+					</div>
+				</div>
+				<div class="actions">
+					<%= f.submit "Save", class: "btn btn-primary" %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

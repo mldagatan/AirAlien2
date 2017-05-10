@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   get 'experiences/index'
   
   get 'experiences', to: 'experiences#index'
@@ -6,6 +7,12 @@ Rails.application.routes.draw do
   get 'professionals/index'
 
   get 'professionals', to: 'professionals#index'
+=======
+  
+
+  #get 'influencer/index'
+  get 'influencer', to: 'influencer#index'
+>>>>>>> master
 
   root 'pages#home'
   #root 'home#index'
@@ -17,4 +24,6 @@ Rails.application.routes.draw do
   			 				  :registrations => 'registrations'
   			 				 }
   resources :users, only: [:show]
+  resources :experiences
+  resources :expphotos
 end
