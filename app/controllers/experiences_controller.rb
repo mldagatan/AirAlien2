@@ -3,7 +3,7 @@ class ExperiencesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
-  	@experiences = current_user.experiences
+  	#@experiences = current_user.experiences
   end
 
   def show
