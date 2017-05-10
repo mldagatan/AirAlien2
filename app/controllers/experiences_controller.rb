@@ -1,13 +1,10 @@
 class ExperiencesController < ApplicationController
-<<<<<<< HEAD
-  def index
-  end
-=======
+
   before_action :set_experience, only: [:show, :edit, :update]
   before_action :authenticate_user!, except: [:show]
 
   def index
-  	@experiences = current_user.experiences
+  	#@experiences = current_user.experiences
   end
 
   def show
@@ -68,5 +65,5 @@ class ExperiencesController < ApplicationController
   	def experience_params
   		params.require(:experience).permit(:day_type, :city, :category, :language, :experience_name, :experience_tagline)
   	end
->>>>>>> master
+
 end
