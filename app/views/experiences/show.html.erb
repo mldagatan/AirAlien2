@@ -10,3 +10,11 @@
 <%= @experience.category %>
 <br>	
 <%= @experience.language %>
+<br>
+<% if @expphotos %>
+	<div class="row">
+		<% @expphotos.each do |expphoto| %>
+			<%= image_tag expphoto.image.url() %>
+		<% end %>
+	</div>
+<% end %>
