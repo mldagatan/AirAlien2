@@ -11,7 +11,63 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170508120837) do
+ActiveRecord::Schema.define(version: 20170511092835) do
+
+  create_table "activities", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "title"
+    t.string   "subtitle"
+    t.text     "what_to_do"
+    t.text     "where_well_be"
+    t.text     "notes"
+    t.integer  "experience_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "location_name"
+    t.string   "country"
+    t.string   "street_address"
+    t.string   "building"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+  end
+
+  add_index "activities", ["experience_id"], name: "index_activities_on_experience_id"
+
+  create_table "activityaddresses", force: :cascade do |t|
+    t.integer  "activity_id"
+    t.string   "location_name"
+    t.string   "country"
+    t.string   "street_address"
+    t.string   "building"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "activityaddresses", ["activity_id"], name: "index_activityaddresses_on_activity_id"
+
+  create_table "activityitems", force: :cascade do |t|
+    t.string   "item_type"
+    t.text     "item_description"
+    t.integer  "activity_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "activityitems", ["activity_id"], name: "index_activityitems_on_activity_id"
+
+  create_table "activitytobrings", force: :cascade do |t|
+    t.string   "item_name"
+    t.integer  "activity_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "activitytobrings", ["activity_id"], name: "index_activitytobrings_on_activity_id"
 
   create_table "experiences", force: :cascade do |t|
     t.string   "day_type"
@@ -23,6 +79,13 @@ ActiveRecord::Schema.define(version: 20170508120837) do
     t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.text     "host_bio"
+    t.integer  "max_guests"
+    t.integer  "price"
+    t.string   "price_currency"
+    t.integer  "prep_time"
+    t.integer  "cutoff_time"
+    t.text     "context_for_guests"
   end
 
   add_index "experiences", ["user_id"], name: "index_experiences_on_user_id"
@@ -38,6 +101,17 @@ ActiveRecord::Schema.define(version: 20170508120837) do
   end
 
   add_index "expphotos", ["experience_id"], name: "index_expphotos_on_experience_id"
+
+  create_table "exprequires", force: :cascade do |t|
+    t.boolean  "is_legal"
+    t.text     "certification"
+    t.text     "extra_require"
+    t.integer  "experience_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "exprequires", ["experience_id"], name: "index_exprequires_on_experience_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
