@@ -3,6 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $main-color: #EA5B67;
 
+a .item img:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.item img {
+	transition: all 0.2s;
+}
 
 .item-name {
 	font-size: 1.5em;
@@ -29,5 +37,47 @@ $main-color: #EA5B67;
 .item .experience-image {
 	height: 340px;
 	object-fit: cover;
-	
+}
+
+#schedule-modal .modal-content {
+	padding: 2em;
+}
+
+#schedule-modal .modal-body {
+	padding: 0 1.5em;
+	margin-top: 1em;
+}
+
+#schedule-modal .row {
+	margin-bottom: 1em;
+	padding: 1em 0;
+	border-bottom: 1px solid #ccc;
+}
+
+#schedule-modal .btn {
+	margin-top: 0;
+}
+
+#schedule-modal .list-time {
+	font-size: 1.25em;
+}
+
+#schedule-modal .col-xs-9 {
+	margin-top: 0.55em;
+}
+
+#schedule-modal .col-xs-9,
+#schedule-modal .col-xs-3 {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#schedule-modal .modal-header {
+	border-bottom: none;
+}
+
+#schedule-modal .modal-body .row {
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 0;
 }
