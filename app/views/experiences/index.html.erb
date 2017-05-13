@@ -25,12 +25,13 @@
     <div class="row">
           
             <% @experiences.each do |experience| %>
-                <% @expphoto = Expphoto.where(experience_id: experience.id) %>
+                <% @expphoto = experience.expphotos.take(1) %>
                 <div class="col-sm-6">
                   <a href="experiences/<%= experience.id %>">
                     <div class="item">
                       <% if @expphoto %>
-                        <img src="<%= image_url('whale.jpg') %>" />
+                        
+                        <img src="<%= image_url(@expphoto[0].image) %>" class="experience-image" />
                       <% else %>
                         <img src="<%= image_url('whale.jpg') %>" />
 
