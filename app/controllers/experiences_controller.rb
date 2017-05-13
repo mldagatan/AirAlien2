@@ -1,7 +1,7 @@
 class ExperiencesController < ApplicationController
 
   before_action :set_experience, only: [:show, :edit, :update]
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: [:show, :index]
 
   def index
   	#@experiences = current_user.experiences
@@ -15,6 +15,24 @@ class ExperiencesController < ApplicationController
   	@experience = current_user.experiences.build
   end
 
+  def create
+    @experience = current_user.experiences.build(experience_params)
+
+    if @experience.save 
+
+      if params[:images]
+        params[:images].each do |image|
+          @experience.expphotos.create(image: image)
+        end
+      end
+
+      @expphotos = @experience.expphotos
+      redirect_to edit_experience_path(@experience), notice: "Saved..."
+    else
+      render :new
+    end
+  end
+
   def edit
   	if current_user.id == @experience.user.id
   		@expphotos = @experience.expphotos
@@ -23,28 +41,10 @@ class ExperiencesController < ApplicationController
   	end
   end
 
-  def create
-  	@experience = current_user.experiences.build(experience_params)
-
-  	if @experience.save 
-
-  		if params[:images]
-  			params[:images].each do [image]
-  				@experience.expphotos.create(image: image)
-  			end
-  		end
-
-  		@expphotos = @experience.expphotos
-  		redirect_to edit_experience_path(@experience), notice: "Saved..."
-  	else
-  		render :new
- 	end
-  end
-
   def update
   	if @experience.update(experience_params)
   		if params[:images]
-  			params[:images].each do [image]
+  			params[:images].each do |image|
   				@experience.expphotos.create(image: image)
   			end
   		end
