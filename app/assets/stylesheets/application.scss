@@ -477,6 +477,56 @@ footer .select2-results__options {
     width: 100%;
 }
 
+
+/* EXPERIENCE DETAILS */
+.affix { top: 0; position:fixed; z-index: 99 }
+
+.exp-page .exp-card-container {
+    position: relative !important;
+    padding-top: 40px !important;
+}
+.exp-page .exp-card {
+    width: 365px;
+}
+.exp-page .exp-card img {
+     width: 100%;
+}
+
+.exp-page .content-details {
+    padding-right: 36px;
+}
+
+.exp-page .content-details h2 {
+    font-weight: 700;
+    color: #EA5B67;
+    font-size: 2.2em
+}
+.exp-page .tagline-details{
+    margin-bottom: 24px;
+}
+.exp-page .boxed-details{
+    border-bottom: 1px solid #5b6580;
+    border-top: 1px solid #5b6580;
+    padding: 24px 0;
+}
+
+ul.exp-specs-details {
+    margin:0;
+    padding: 0;
+}
+
+ul.exp-specs-details li {
+    list-style: none;
+    line-height: 2.2em;
+    list-style-position: inside;
+    margin:0;
+}
+
+ul.exp-specs-details li i{
+    margin-right:10px; color:#FFF;
+}
+
+
 /* 820 Breakpoint */
 @media only screen and (max-width: 820px) {
     .card-header h3 {  
