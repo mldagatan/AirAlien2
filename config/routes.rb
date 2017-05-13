@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   
   get 'demo', to: 'demo#index'
 
-  get 'experiences/index'
+  #get 'experiences/index'
   
-  get 'experiences', to: 'experiences#index'
+  #get 'experiences', to: 'experiences#index'
 
   get 'professionals/index'
 

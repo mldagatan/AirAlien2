@@ -1,3 +1,5 @@
+
+<%= stylesheet_link_tag params[:controller] %>
 <div class="hero-banner-img-wrap" style="background-image: url('<%= image_url('gohiso-party.jpg') %>')">
     <div class="container">
         <div class="row">
@@ -11,6 +13,42 @@
     </div>
 </div>
 
+
+<!-- EXPERIENCES -->
+<% if @experiences %>
+<div class="container exp-header">  
+  <h2>Latest Experiences</h2>
+  <p>Experience the latest, wildly-booked activities of GoHiSo.</p>
+</div>
+
+<div class="container grid-cards 2cols">
+    <div class="row">
+          
+            <% @experiences.each do |experience| %>
+                <% @expphoto = Expphoto.where(experience_id: experience.id) %>
+                <div class="col-sm-6">
+                  <a href="experiences/<%= experience.id %>">
+                    <div class="item">
+                      <% if @expphoto %>
+                        <img src="<%= image_url('whale.jpg') %>" />
+                      <% else %>
+                        <img src="<%= image_url('whale.jpg') %>" />
+
+                      <% end %>
+                      <span class="item-name"><%= experience.experience_name %></span>
+                      <span class="desc">
+                        <%= experience.experience_tagline %>
+                      </span>
+                    </div>  
+                  </a>
+              </div>
+            <% end %>
+          
+    </div>  
+</div>
+<% end %>
+
+<!-- PROFESSIONALS -->
 <div class="container exp-header">  
   <h2>Connect with local Professionals</h2>
   <p>Learn from local legends, like surf pros, up-and-coming artists, master chefs, and nonprofit founders.</p>
@@ -18,45 +56,18 @@
 
 <div class="container grid-cards 2cols">
     <div class="row">
-          <div class="col-sm-6">
-              <div class="item">
-                <img src="<%= image_url('cards_-45.png') %>" />
-                <span class="desc">With more than 5 million followers on Instagram, 17-year-old Bretman Rock has taken the Internet by storm...</span>
-              </div>  
-          </div>
-          <div class="col-sm-6">
-              <div class="item">
-                <img src="<%= image_url('cards_-46.png') %>" />
-                <span class="desc">YouTuber who is known for maintaining his health-centric, eponymous channel, which he launched in June 2012...</span>
-              </div>  
-          </div>
-          <div class="col-sm-6">
-              <div class="item">
-                <img src="<%= image_url('cards_-47.png') %>" />
-                <span class="desc">a Filipino racing driver, who raced for Status Grand Prix in the 2012 GP3 Series and currently driving for Lotus F1 Team Juniors...</span>
-              </div>  
-          </div>
-          <div class="col-sm-6">
-              <div class="item">
-                <img src="<%= image_url('cards_-48.png') %>" />
-                <span class="desc">a Filipino-American actress and model. She started in a range of television series and films, including Wansapanataym..</span>
-              </div>  
-          </div>
-
-          <div class="col-sm-6">
-              <div class="item">
-                <img src="<%= image_url('cards_-50.png') %>" />
-                <span class="desc">a Filipina actress. Her first major role was as supporting cast member on the ABS-CBN remake of Mula Sa Puso..</span>
-              </div>  
-          </div>
-
-          <div class="col-sm-6">
-              <div class="item">
-                <img src="<%= image_url('cards_-49.png') %>" />
-                <span class="desc">a Filipino - Canadian singer. He made his first television appearance at the age of ten when he joined YTV's reality television The Next Star in 2012..</span>
-              </div>  
-          </div>
-
+          <% if @users %>
+            <% @users.each do |user| %>
+               <div class="col-sm-6">
+                <a href="users/<%= user.id %>">
+                  <div class="item">
+                    <img src="<%= image_url(user.image) %>" />
+                    <span class="desc"><%= user.description %></span>
+                  </div> 
+                </a> 
+              </div>
+            <% end %>
+          <% end %>
     </div>  
 </div>
 

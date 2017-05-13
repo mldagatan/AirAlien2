@@ -5,6 +5,9 @@ class ExperiencesController < ApplicationController
 
   def index
   	#@experiences = current_user.experiences
+    @users = User.all.take(6)
+    @experiences = Experience.all.take(6)
+    
   end
 
   def show
