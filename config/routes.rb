@@ -24,4 +24,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :experiences
   resources :expphotos
+
+  resources :experiences do 
+    resources :reservations, only: [:create]
+  end
 end
