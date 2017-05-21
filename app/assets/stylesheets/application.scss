@@ -536,6 +536,8 @@ form.color-invert .form-control:focus{
     outline: none!important;    
 }
 
+.modal-header h2 {margin:0;padding:0}
+
 /* 820 Breakpoint */
 @media only screen and (max-width: 820px) {
     .card-header h3 {  

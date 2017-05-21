@@ -24,7 +24,7 @@ a .item img:hover {
 }
 
 #schedule-modal h2 {
-	color: #333
+	color: #ea5b67
 }
 #schedule-modal {
 	color: #555
@@ -44,7 +44,7 @@ a .item img:hover {
 }
 
 #schedule-modal .modal-body {
-	padding: 0 1.5em;
+	padding: 0;
 	margin-top: 1em;
 }
 
@@ -73,11 +73,12 @@ a .item img:hover {
 }
 
 #schedule-modal .modal-header {
-	border-bottom: none;
+    padding-top:0;
+    padding-left: 0;
+    border-bottom: 1px solid #ccc;
 }
 
-#schedule-modal .modal-body .row {
-	margin-left: 0;
-	margin-right: 0;
-	margin-bottom: 0;
-}
+#schedule-modal .modal-body .row       {border:none;padding:10px; border-left: 1px solid #FFF}
+#schedule-modal .modal-body .row:hover {border:none;background-color: #f8f8f8; border-left:1px solid #ddd;}
+#schedule-modal .modal-body .row .btn  {float:right; padding:5px 20px;}
+
