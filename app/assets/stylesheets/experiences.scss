@@ -82,3 +82,32 @@ a .item img:hover {
 #schedule-modal .modal-body .row:hover {border:none;background-color: #f8f8f8; border-left:1px solid #ddd;}
 #schedule-modal .modal-body .row .btn  {float:right; padding:5px 20px;}
 
+
+/* 480 Breakpoint */
+@media only screen and (max-width: 480px) {
+    #schedule-modal .modal-header h2 {
+        font-size: 1.6em
+    }
+    #schedule-modal .list-time {
+        font-size: 12px;font-weight: bold;
+        display: block; 
+    }
+    #schedule-modal .modal-body .row {border:none;background-color: #f8f8f8; border-left:1px solid #ddd; margin-bottom: 10px; padding-right: 5px}
+    #schedule-modal .row .btn {padding:5px 10px; font-size: 12px}
+}
+
+
+/* 320 Breakpoint */
+@media only screen and (max-width: 320px) {
+    
+    #schedule-modal .modal-header h2 {
+        font-size: 1.2em
+    }
+    #schedule-modal .list-time {
+        font-size: 10px; font-weight: bold;
+        display: block; 
+    }
+    #schedule-modal .modal-body .row {border:none;background-color: #f8f8f8; border-left:1px solid #ddd; margin-bottom: 10px; padding-right: 5px}
+    #schedule-modal .row .btn {padding:5px 10px; font-size: 11px}
+}
+
