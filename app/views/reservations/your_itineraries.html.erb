@@ -1,38 +1,44 @@
-<div class="row">
-	<div class="col-md-3">
-		<ul class="sidebar-list">
-			<li class="sidebar-item"><%= link_to "Your Listing", experiences_path, class: "sidebar-link" %></li>
-			<li class="sidebar-item"><%= link_to "Your Reservations", experiences_path, class: "sidebar-link" %></li>
-			<li class="sidebar-item"><%= link_to "Your Itineraries", your_itineraries_path, class: "sidebar-link active" %></li>
-		</ul>
-	</div>
 
-	<div class="col-md-9">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				Your Itineraries
-			</div>
-			<div class="panel-body">
-				
-				<% @itineraries.each do |itinerary| %>
-					<div class="row">
-						<div class="col-md-2"><%= itinerary.experience.experience_name %></div>
+<div class="container my-dashbord">
+ 
+	<div class="row">
+		<div class="col-md-3">
+			<ul class="sidebar-list">
+				<li class="sidebar-item"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;<%= link_to "Your Listing", experiences_path, class: "sidebar-link" %></li>
+				<li class="sidebar-item"><i class="fa fa-calendar"></i>&nbsp;&nbsp;<%= link_to "Your Reservations", experiences_path, class: "sidebar-link" %></li>
+				<li class="sidebar-item"><i class="fa fa-history"></i>&nbsp;&nbsp;<%= link_to "Your Itineraries", your_itineraries_path, class: "sidebar-link active" %></li>
+			</ul>
+		</div>
 
-						<div class="col-md-6">
-						<%= link_to experience_path(itinerary.experience) do %>
-							<%= image_tag itinerary.experience.expphotos[0].image.url(:medium) %>
-						<% end %>
+		<div class="col-md-9">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Your Itineraries
+				</div>
+				<div class="panel-body">
+					
+					<% @itineraries.each do |itinerary| %>
+						<div class="row">
+							<div class="col-md-2"><%= itinerary.experience.experience_name %></div>
+
+							<div class="col-md-6">
+							<%= link_to experience_path(itinerary.experience) do %>
+								<%= image_tag itinerary.experience.expphotos[0].image.url(:medium) %>
+							<% end %>
+							</div>
+							<div class="col-md-2">
+							<%= link_to user_path(itinerary.experience.user_id) do %>
+								<%= image_tag avatar_url(itinerary.experience.user), class: "img-circle avatar-medium" %>
+							<% end %>
+							</div>
+							<div class="col-md-2 right"><h4>PHP <%= itinerary.total %></h4></div>
 						</div>
-						<div class="col-md-2">
-						<%= link_to user_path(itinerary.experience.user_id) do %>
-							<%= image_tag avatar_url(itinerary.experience.user), class: "img-circle avatar-medium" %>
-						<% end %>
-						</div>
-						<div class="col-md-2 right"><h4>PHP <%= itinerary.total %></h4></div>
-					</div>
-				<% end %>
+					<% end %>
 
+				</div>
 			</div>
 		</div>
 	</div>
+
 </div>
+<!--/container -->
