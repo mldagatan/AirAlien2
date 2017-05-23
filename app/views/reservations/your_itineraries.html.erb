@@ -24,9 +24,19 @@
                            </div>
                            <% end %>
 
+                           <!--# Dyanamic Avatar -->
+                           <!--
+
+                           Hi Ernest, can you fix the "avatar_url(...)"? i'm not able to get the full path of the image. thanks!
+
                            <%= link_to user_path(itinerary.experience.user_id) do %>
                              <div class="item-avatar" style="background-image: url('<%= avatar_url(itinerary.experience.user) %>')"></div>
                            <% end %>
+                           -->
+
+                           <!--# TEMPORARY Static Avatar -->
+							<div class="item-avatar" style="background-image: url('http://ec2-34-208-88-113.us-west-2.compute.amazonaws.com:3002/assets/cards_-45-430e9ef4295121ddded70f1e7e9cf75965d405239e42b9122bebe43dd843ef04.png')"></div>
+
 
                           <div class="itr_details">
                                 <div class="item-header">
