@@ -1,7 +1,8 @@
 
 <div class="container my-dashbord">
- 
+
 	<div class="row">
+	
 		<div class="col-md-3">
 			<ul class="sidebar-list">
 				<li class="sidebar-item"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;<%= link_to "Your Listing", experiences_path, class: "sidebar-link" %></li>
@@ -11,33 +12,44 @@
 		</div>
 
 		<div class="col-md-9">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					Your Itineraries
-				</div>
-				<div class="panel-body">
-					
-					<% @itineraries.each do |itinerary| %>
-						<div class="row">
-							<div class="col-md-2"><%= itinerary.experience.experience_name %></div>
+              <h3 class="h3">Your Itineraries</h3>
+              <div class="myItineryList">
 
-							<div class="col-md-6">
-							<%= link_to experience_path(itinerary.experience) do %>
-								<%= image_tag itinerary.experience.expphotos[0].image.url(:medium) %>
-							<% end %>
-							</div>
-							<div class="col-md-2">
-							<%= link_to user_path(itinerary.experience.user_id) do %>
-								<%= image_tag avatar_url(itinerary.experience.user), class: "img-circle avatar-medium" %>
-							<% end %>
-							</div>
-							<div class="col-md-2 right"><h4>PHP <%= itinerary.total %></h4></div>
-						</div>
-					<% end %>
 
-				</div>
-			</div>
+              	<% @itineraries.each do |itinerary| %>
+
+                    <div class="item">
+                           <%= link_to experience_path(itinerary.experience) do %>
+                           <div class="itr_img" style="background-image: url('<%= itinerary.experience.expphotos[0].image.url(:medium) %>');">
+                           </div>
+                           <% end %>
+
+                           <%= link_to user_path(itinerary.experience.user_id) do %>
+                             <div class="item-avatar" style="background-image: url('<%= avatar_url(itinerary.experience.user) %>')"></div>
+                           <% end %>
+
+                          <div class="itr_details">
+                                <div class="item-header">
+                                     <h4><a href="#"><%= itinerary.experience.experience_name %></a></h4>
+                                </div>
+                                <p>May 20-22, 2017  &bull; Makati  &bull; Php <%= itinerary.total %></p>
+                                <br />
+                                <div class="link_options">
+                                  <p> <a href="#"><i class="fa fa-credit-card"></i> &nbsp;View Receipt</p>
+                                  <p> <a href="#"><i class="fa fa-money"></i> &nbsp;Send or Request Money</p>
+                                  <p> <a href="#"><i class="fa fa-star"></i> &nbsp;Read your Review</p>
+                                </div>
+                          </div> 
+                    </div>
+
+                <% end %>
+
+              </div>
+              <!--/myItineryList -->
+
+
 		</div>
+
 	</div>
 
 </div>

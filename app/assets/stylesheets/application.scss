@@ -366,6 +366,36 @@ border-radius: 0 22px 22px 0}
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$main-color', endColorstr='#d40264', GradientType=1 );
 }
 
+/* My Listings */
+#myDashboard ul.sidebar-list {margin-top: 35px}
+#myDashboard h3.h3 {border-bottom: 1px solid #FFF;padding-bottom: 10px}
+#myDashboard .myItineryList {margin-top: 35px}
+#myDashboard .myItineryList .item {height: 220px; border:1px solid #474f64; border-radius: 12px; position: relative; margin-bottom: 25px}
+#myDashboard .myItineryList .item .itr_img {
+                 height: 220px; border-radius: 12px 0 0 12px; 
+                 background-size: cover; width:250px; position: absolute; left: 0; top: 0;
+                 margin-bottom: 25px; background-position: center center;
+                 }
+#myDashboard .myItineryList .item .itr_details {
+                 margin-left: 280px;
+}
+
+#myDashboard .myItineryList .item .itr_details .item-header,
+#myDashboard .myItineryList .item .itr_details .item-header h4 a,
+#myDashboard .myItineryList .item .itr_details .item-header h4 a:hover {
+                 margin-top:20px;
+                 color:#EA5B67!important;
+                 text-decoration: none;
+}
+
+#myDashboard .myItineryList .item .item-avatar {
+                height: 60px; width: 60px; background-size: auto 42px; background-position: center center;
+                border-radius: 50%; background-color: red; position: absolute; top: 10px; right: 10px; z-index: 4px;
+}
+.itr_details .link_options {font-size: 1em}
+.itr_details .link_options a,
+.itr_details .link_options i {color:#FFF;}
+
 /* FOOTER */
 footer {
     color:#FFF;
