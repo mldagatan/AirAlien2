@@ -28,4 +28,6 @@ Rails.application.routes.draw do
   resources :experiences do 
     resources :reservations, only: [:create]
   end
+
+  get '/your_itineraries' => 'reservations#your_itineraries'
 end
