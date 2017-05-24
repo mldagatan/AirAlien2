@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: 2017-05-24 19:51:40
+  end_time: 2017-05-24 19:51:40
+  title: MyString
+  subtitle: MyString
+  what_to_do: MyText
+  where_well_be: MyString
+  notes: MyText
+  location_name: MyString
+  country: MyString
+  street_address: MyString
+  building: MyString
+  city: MyString
+  state: MyString
+  zipcode: MyString
+  experience_id: 
+
+two:
+  start_time: 2017-05-24 19:51:40
+  end_time: 2017-05-24 19:51:40
+  title: MyString
+  subtitle: MyString
+  what_to_do: MyText
+  where_well_be: MyString
+  notes: MyText
+  location_name: MyString
+  country: MyString
+  street_address: MyString
+  building: MyString
+  city: MyString
+  state: MyString
+  zipcode: MyString
+  experience_id: 

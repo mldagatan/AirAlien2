@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170517090230) do
+ActiveRecord::Schema.define(version: 20170524115140) do
 
   create_table "activities", force: :cascade do |t|
     t.datetime "start_time"
@@ -19,11 +19,8 @@ ActiveRecord::Schema.define(version: 20170517090230) do
     t.string   "title"
     t.string   "subtitle"
     t.text     "what_to_do"
-    t.text     "where_well_be"
+    t.string   "where_well_be"
     t.text     "notes"
-    t.integer  "experience_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
     t.string   "location_name"
     t.string   "country"
     t.string   "street_address"
@@ -31,6 +28,9 @@ ActiveRecord::Schema.define(version: 20170517090230) do
     t.string   "city"
     t.string   "state"
     t.string   "zipcode"
+    t.integer  "experience_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   add_index "activities", ["experience_id"], name: "index_activities_on_experience_id"

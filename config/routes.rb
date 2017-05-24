@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  
+
   get 'demo/index'
   
   get 'demo', to: 'demo#index'
@@ -24,10 +26,15 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :experiences
   resources :expphotos
+  resources :activities
 
   resources :experiences do 
     resources :reservations, only: [:create]
+    resources :activities
   end
 
+
+
   get '/your_itineraries' => 'reservations#your_itineraries'
+  get '/your_listings' => 'experiences#your_listings'
 end

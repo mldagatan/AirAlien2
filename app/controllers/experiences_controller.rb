@@ -12,6 +12,7 @@ class ExperiencesController < ApplicationController
 
   def show
   	@expphotos = @experience.expphotos
+    @activities = @experience.activities
   end
 
   def new

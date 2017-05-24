@@ -50,7 +50,8 @@
             <%= image_tag avatar_url(current_user), class: "img-circle avatar-small", alt: "?" %>&nbsp;
             <%= current_user.fullname %> <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="../your_itineraries">Your Bookings</a></li>
+              <li><%= link_to "Your Bookings", your_itineraries_path %></li>
+              <li><%= link_to "Your Listings", your_listings_path %></li>
               
               <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
               <li>

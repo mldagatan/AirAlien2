@@ -21,6 +21,29 @@
          </div>
 
         
+          <% if @activities %>
+            <div class="activities-section">
+              <h2>Activities</h2>
+
+              <% @activities.each do |activity| %>
+
+                <h3>Day 1:</h3>
+                <h4><%= activity.title %></h4>
+                <p class="subtitle"><%= activity.subtitle %></p>
+                <h4>What to do?</h4>
+                <p><%= activity.what_to_do %></p>
+                <h4>Where we'll be?</h4>
+                <p><%= activity.where_well_be %></p>
+                <% if activity.notes %>
+                  <h4>Additional notes</h4>
+                  <p><%= activity.notes %></p>
+                <% end %>
+                <h4>Location</h4>
+                <p><%= activity.location_name %> <%= activity.street_address %> <%= activity.building %> <%= activity.city %> <%= activity.state %> <%= activity.zipcode %> </p>
+              <% end %>
+            </div>
+          <% end %>
+        
 
          <div class="about-details">
               <br />

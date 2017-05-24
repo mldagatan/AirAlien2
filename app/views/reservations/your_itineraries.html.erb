@@ -28,21 +28,21 @@
                            <!--
 
                            Hi Ernest, can you fix the "avatar_url(...)"? i'm not able to get the full path of the image. thanks!
-
+-->
                            <%= link_to user_path(itinerary.experience.user_id) do %>
-                             <div class="item-avatar" style="background-image: url('<%= avatar_url(itinerary.experience.user) %>')"></div>
+                             <%= image_tag avatar_url(itinerary.experience.user), class: "item-avatar" %>
                            <% end %>
-                           -->
+                           
 
-                           <!--# TEMPORARY Static Avatar -->
+                           <!--# TEMPORARY Static Avatar 
 							<div class="item-avatar" style="background-image: url('http://ec2-34-208-88-113.us-west-2.compute.amazonaws.com:3002/assets/cards_-45-430e9ef4295121ddded70f1e7e9cf75965d405239e42b9122bebe43dd843ef04.png')"></div>
-
+						-->
 
                           <div class="itr_details">
                                 <div class="item-header">
-                                     <h4><a href="#"><%= itinerary.experience.experience_name %></a></h4>
+                                     <h4> <%= link_to experience_path(itinerary.experience) do %><%= itinerary.experience.experience_name %><% end %></h4>
                                 </div>
-                                <p>May 20-22, 2017  &bull; Makati  &bull; Php <%= itinerary.total %></p>
+                                <p>May 20-22, 2017  &bull; <%= itinerary.experience.city %>  &bull; Php <%= itinerary.experience.price %></p>
                                 <br />
                                 <div class="link_options">
                                   <p> <a href="#"><i class="fa fa-credit-card"></i> &nbsp;View Receipt</a></p>
