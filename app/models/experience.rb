@@ -4,6 +4,9 @@ class Experience < ActiveRecord::Base
   has_many :reservations
   has_many :activities
 
+  geocoded_by :city
+  after_validation :geocode, if: :city_changed?
+
   validates :day_type, presence: true
   validates :city, presence: true
   validates :category, presence: true

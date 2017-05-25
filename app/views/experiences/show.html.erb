@@ -12,6 +12,10 @@
          </div>
 
          <div class="boxed-details">
+            <p><%= @experience.category %></p>
+            <p>Hosted by <%= link_to @experience.user.fullname, @experience.user %></p>
+            <p><a href="#">Contact host</a></p>
+            
             <ul class="exp-specs-details">
               <li><i class="fa fa-calendar"></i><%= @experience.day_type %></li>
               <li><i class="fa fa-clock-o"></i>  11.5 hours total</li>
@@ -44,6 +48,40 @@
             </div>
           <% end %>
         
+        <br>
+        <hr>
+
+        <!-- Google Map -->
+        <div class="googlemap">
+          <div class="col-md-12">
+            <div id="map"></div>
+            <style>
+              #map {
+                width: 100%;
+                height: 400px;
+              }
+            </style>
+            <script>
+              function initMap() {
+                var uluru = {lat: <%= @experience.latitude %>, lng: <%= @experience.longitude %>};
+                var map = new google.maps.Map(document.getElementById('map'), {
+                  zoom: 14,
+                  center: uluru
+                });
+                var marker = new google.maps.Marker({
+                  position: uluru,
+                  map: map
+                });
+              }
+            </script>
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5O6ssZulK2buPBY3gfIMJ-LlYuDIxA4g&callback=initMap">
+            </script>
+          </div>
+        </div>
+
+        <br>
+        <hr>
 
          <div class="about-details">
               <br />
@@ -58,18 +96,18 @@
       </div>
       <div class="col-lg-5 col-md-6 col-sm-12">
 
-      <div class="exp-card-container">
-           <div class="exp-card" data-spy="affix" data-offset-top="90" data-offset-bottom="530">
-			<% @expphotos.each do |expphoto| %>
-				<%= image_tag expphoto.image.url(), class: "experience-image" %>
-			<% end %>
-           	<!--
-             <img src="https://a0.muscache.com/im/pictures/c380debc-e608-4b0f-9df1-73a9474ccd5a.jpg?aki_policy=xl_poster" />
-             -->
-          </div>
-          <br>
-		  <button class="btn btn-primary" data-toggle="modal" data-target="#schedule-modal">See Dates</button>
-      </div>
+        <div class="exp-card-container">
+             <div class="exp-card" data-spy="affix" data-offset-top="90" data-offset-bottom="530">
+  			<% @expphotos.each do |expphoto| %>
+  				<%= image_tag expphoto.image.url(), class: "experience-image" %>
+  			<% end %>
+             	<!--
+               <img src="https://a0.muscache.com/im/pictures/c380debc-e608-4b0f-9df1-73a9474ccd5a.jpg?aki_policy=xl_poster" />
+               -->
+            </div>
+            <br>
+  		  <button class="btn btn-primary" data-toggle="modal" data-target="#schedule-modal">See Dates</button>
+        </div>
           
       </div>  
 
@@ -87,22 +125,7 @@
             	<div class="modal-header"><h2>When do you want to go?</h2></div>
                 <div class="modal-body">
                   <%= render 'reservations/form' %>
-
-                  <!--
-                  <div class="row">
-                  	<div class="col-xs-9"><span class="list-time">Tue, May 16 · 5:00 PM − 7:30 PM</span></div>
-                  	<div class="col-xs-3"><button class="btn btn-default">Book</button></div>
-                  </div>
-				  <div class="row">
-                  	<div class="col-xs-9"><span class="list-time">Wed, May 17 · 5:00 PM − 7:30 PM</span></div>
-                  	<div class="col-xs-3"><button class="btn btn-default">Book</button></div>
-                  </div>
-                  <div class="row">
-                  	<div class="col-xs-9"><span class="list-time">Thurs, May 18 · 5:00 PM − 7:30 PM</span></div>
-                  	<div class="col-xs-3"><button class="btn btn-default">Book</button></div>
-                  </div>
-                  -->
-				  
+		  
                 </div>
 
 

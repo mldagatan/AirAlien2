@@ -40,6 +40,7 @@ gem 'omniauth-google-oauth2'
 
 gem 'paperclip'
 gem "font-awesome-rails"
+gem 'geocoder'
 
 
 gem 'figaro'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524115140) do
+ActiveRecord::Schema.define(version: 20170525091424) do
 
   create_table "activities", force: :cascade do |t|
     t.datetime "start_time"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20170524115140) do
     t.integer  "experience_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "activities", ["experience_id"], name: "index_activities_on_experience_id"
@@ -69,6 +71,18 @@ ActiveRecord::Schema.define(version: 20170524115140) do
 
   add_index "activitytobrings", ["activity_id"], name: "index_activitytobrings_on_activity_id"
 
+  create_table "actphotos", force: :cascade do |t|
+    t.integer  "activity_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "actphotos", ["activity_id"], name: "index_actphotos_on_activity_id"
+
   create_table "experiences", force: :cascade do |t|
     t.string   "day_type"
     t.string   "city"
@@ -86,6 +100,8 @@ ActiveRecord::Schema.define(version: 20170524115140) do
     t.integer  "prep_time"
     t.integer  "cutoff_time"
     t.text     "context_for_guests"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "experiences", ["user_id"], name: "index_experiences_on_user_id"
@@ -147,6 +163,7 @@ ActiveRecord::Schema.define(version: 20170524115140) do
     t.datetime "confirmation_sent_at"
     t.string   "phone_number"
     t.text     "description"
+    t.boolean  "is_featured"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

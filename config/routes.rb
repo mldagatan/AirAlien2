@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :experiences
   resources :expphotos
+  resources :actphotos
   resources :activities
 
   resources :experiences do 
@@ -37,4 +38,6 @@ Rails.application.routes.draw do
 
   get '/your_itineraries' => 'reservations#your_itineraries'
   get '/your_listings' => 'experiences#your_listings'
+  get '/guestrequire' => 'experiences#guestrequire'
+  get '/guests' => 'experiences#guests'
 end
