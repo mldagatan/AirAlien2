@@ -1,8 +1,6 @@
-<% new_user = User.new %>
-
-<% unless new_user.errors.empty? %>
+<% unless resource.errors.empty? %>
 	<script type="text/javascript">
-		<% new_user.errors.full_messages.each do |msg| %>
+		<% resource.errors.full_messages.each do |msg| %>
 			toastr.error('<%= msg %>')
 		<% end %>
 	</script>
