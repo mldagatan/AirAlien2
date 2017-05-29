@@ -1,0 +1,91 @@
+<%= stylesheet_link_tag params[:controller] %>
+
+<div class="container">  
+      <h1 class="brand-color">Create your Beautiful Experience</h1>
+      <br />
+      <br />
+      <div class="row">
+        <div class="col-lg-8">
+				
+				<%= form_for @experience, :html => {:multipart => true, class: "form-horizontal color-invert"} do |f| %>
+
+                    <div class="form-group">
+                      <label for="city" class="col-sm-4 control-label">City</label>
+                      <div class="col-sm-8">
+                          <%= f.select :city, [["Makati", "Makati"], ["Muntinlupa", "Muntinlupa"], ["Quezon", "Quezon"]], id: "city", prompt: "Select a city", class: "form-control" %>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="day_type" class="col-sm-4 control-label">Type</label>
+                      <div class="col-sm-8">
+							<%= f.select :day_type, [["Single Day", "Single Day"], ["Multiple Days", "Multiple Days"]], id: "day_type", prompt: "Select a type", class: "form-control" %>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="category" class="col-sm-4 control-label">Category</label>
+                      <div class="col-sm-8">
+							<%= f.select :category, [["Arts & Design", "Arts & Design"],["Fashion", "Fashion"],["Entertainment", "Entertainment"],["Sports", "Sports"],["Wellness", "Wellness"],["Nature", "Nature"],["Food & Drink", "Food & Drink"],["Lifestyle", "Lifestyle"],["History", "History"],["Music", "Music"],["Business", "Business"],["Nightlife", "Nightlife"]], id: "category", prompt: "Select a category", class: "form-control" %>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="experience_name" class="col-sm-4 control-label">Title of Experience</label>
+                      <div class="col-sm-8">
+							<%= f.text_field :experience_name, placeholder: "Name the experience", class: "form-control" %>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="experience_tagline" class="col-sm-4 control-label">Add a tagline</label>
+                      <div class="col-sm-8">
+							<%= f.text_field :experience_tagline, placeholder: "Write the tagline here", class: "form-control" %>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="language" class="col-sm-4 control-label">Language</label>
+                      <div class="col-sm-8">
+							<%= f.select :language, [["English", "English"], ["Filipino", "Filipino"]], id: "language", prompt: "Select a language", class: "form-control" %>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+	                      <div class="col-sm-offset-4 col-sm-8">
+								<span class="btn btn-default btn-file">
+									<i class="fa fa-cloud-upload fa-lg"></i> Upload Photos
+									<%= file_field_tag "images[]", type: :file, multiple: true %>
+								</span>
+	                      </div>
+                    </div>
+
+
+					 <div class="form-group">
+					    <div class="col-sm-offset-4 col-sm-8">
+					       <div id="expphotos"><%= render 'expphotos/list' %></div>
+					    </div>
+					 </div>
+
+					 <div class="form-group actions">
+					    <div class="col-sm-offset-4 col-sm-8">
+					       <%= f.submit "Save", class: "btn btn-primary" %>
+					    </div>
+					 </div>
+
+
+                <% end %>   
+
+        </div>
+        <!--/col-lg-8-->
+        
+        <!-- create activities -->
+        <div class="col-lg-8">
+          <h2>Create Activities</h2>
+          
+          <%= render 'activityform' %>
+        </div>
+
+      </div><!--/row-->
+        
+</div>        

@@ -1,0 +1,66 @@
+
+<div class="container myDashboard"> 
+
+    <div id="myDashboard" class="row">
+
+		<div class="col-md-3">
+			<%= render 'sidebar' %>
+		</div>
+
+		<div class="col-md-9">
+              <h3 class="h3">Your Listings</h3>
+              <div class="myItineryList">
+				<% if current_user.experiences.empty? == false %>
+	              	<% current_user.experiences.each do |experience| %>
+
+	                    <div class="item">
+	                           <%= link_to experience_path(experience) do %>
+	                           <div class="itr_img" style="background-image: url('<%= experience.expphotos[0].image.url(:medium) %>');">
+	                           </div>
+	                           <% end %>
+
+	                           <!--# Dyanamic Avatar -->
+	                           <!--
+
+	                           Hi Ernest, can you fix the "avatar_url(...)"? i'm not able to get the full path of the image. thanks!
+	-->
+	                           <%= link_to user_path(experience.user_id) do %>
+	                             <%= image_tag avatar_url(experience.user), class: "item-avatar" %>
+	                           <% end %>
+	                           
+
+	                           <!--# TEMPORARY Static Avatar 
+								<div class="item-avatar" style="background-image: url('http://ec2-34-208-88-113.us-west-2.compute.amazonaws.com:3002/assets/cards_-45-430e9ef4295121ddded70f1e7e9cf75965d405239e42b9122bebe43dd843ef04.png')"></div>
+							-->
+
+	                          <div class="itr_details">
+	                                <div class="item-header">
+	                                     <h4> <%= link_to experience_path(experience) do %><%= experience.experience_name %><% end %></h4>
+	                                </div>
+	                                <p>May 20-22, 2017  &bull; <%= experience.city %>  &bull; Php <%= experience.price %></p>
+	                                <br />
+	                                <div class="link_options">
+	                                  <p> <a href="#"><i class="fa fa-credit-card"></i> &nbsp;View Receipt</a></p>
+	                                  <p> <a href="#"><i class="fa fa-money"></i> &nbsp;Send or Request Money</a></p>
+	                                  <p> <a href="#"><i class="fa fa-star"></i> &nbsp;Read your Review</a></p>
+	                                </div>
+	                          </div> 
+	                    </div>
+
+	                <% end %>
+	            <% else %>
+					<p>You currently don't have any listings.</p>
+					<p>Click here to host an experience!</p>
+					<%= link_to "Host an experience", new_experience_path, class: "btn btn-primary" %>
+	            <% end %>
+
+              </div>
+              <!--/myItineryList -->
+
+
+		</div>
+
+	</div>
+
+</div>
+<!--/container -->

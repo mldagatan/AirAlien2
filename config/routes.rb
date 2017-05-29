@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :rooms
   resources :photos
+  resources :experiences
+  resources :expphotos
 
   resources :rooms do
     resources :reservations, only: [:create]
@@ -23,6 +25,13 @@ Rails.application.routes.draw do
 
   resources :rooms do
     resources :reviews, only: [:create, :destroy]
+  end
+
+  resources :actphotos
+  resources :activities
+
+  resources :experiences do 
+    resources :activities
   end
 
   get '/preload' => 'reservations#preload'

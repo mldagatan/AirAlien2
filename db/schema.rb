@@ -11,7 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150925120708) do
+ActiveRecord::Schema.define(version: 20170529134420) do
+
+  create_table "activities", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "title"
+    t.string   "subtitle"
+    t.text     "what_to_do"
+    t.string   "where_well_be"
+    t.text     "notes"
+    t.string   "location_name"
+    t.string   "country"
+    t.string   "street_address"
+    t.string   "building"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.integer  "experience_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.float    "latitude"
+    t.float    "longitude"
+  end
+
+  add_index "activities", ["experience_id"], name: "index_activities_on_experience_id"
+
+  create_table "actphotos", force: :cascade do |t|
+    t.integer  "activity_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "actphotos", ["activity_id"], name: "index_actphotos_on_activity_id"
 
   create_table "conversations", force: :cascade do |t|
     t.integer  "sender_id"
@@ -19,6 +55,41 @@ ActiveRecord::Schema.define(version: 20150925120708) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  create_table "experiences", force: :cascade do |t|
+    t.string   "day_type"
+    t.string   "city"
+    t.string   "category"
+    t.string   "language"
+    t.string   "experience_name"
+    t.string   "experience_tagline"
+    t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.text     "host_bio"
+    t.integer  "price"
+    t.string   "price_currency"
+    t.integer  "prep_time"
+    t.integer  "cutoff_time"
+    t.text     "context_for_guests"
+    t.integer  "max_guests"
+  end
+
+  add_index "experiences", ["user_id"], name: "index_experiences_on_user_id"
+
+  create_table "expphotos", force: :cascade do |t|
+    t.integer  "experience_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "expphotos", ["experience_id"], name: "index_expphotos_on_experience_id"
 
   create_table "messages", force: :cascade do |t|
     t.text     "content"
@@ -117,6 +188,7 @@ ActiveRecord::Schema.define(version: 20150925120708) do
     t.string   "image"
     t.string   "phone_number"
     t.text     "description"
+    t.boolean  "isFeatured"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

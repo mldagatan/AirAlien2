@@ -1,0 +1,97 @@
+
+<%= stylesheet_link_tag params[:controller] %>
+<div class="hero-banner-img-wrap" style="background-image: url('<%= image_url('gohiso-party.jpg') %>')">
+    <div class="container">
+        <div class="row">
+              <div class="hero-box">
+                  <div class="hero-quicksearch">
+                      <h1 class="brand-color">GoHiSo Experience</h1>
+                      <h2>Elevate your lifestyle</h2>
+                  </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- EXPERIENCES -->
+<% if @experiences %>
+<div class="container exp-header">  
+  <h2>Latest Experiences</h2>
+  <p>Experience the latest, wildly-booked activities of GoHiSo.</p>
+</div>
+
+<div class="container grid-cards 2cols">
+    <div class="row">
+          
+            <% @experiences.each do |experience| %>
+                <% @expphoto = experience.expphotos.take(1) %>
+                <div class="col-sm-6">
+                  <a href="experiences/<%= experience.id %>">
+                    <div class="item">
+                      <% if @expphoto %>
+                        
+                        <img src="<%= image_url(@expphoto[0].image) %>" class="experience-image" />
+                      <% else %>
+                        <img src="<%= image_url('whale.jpg') %>" />
+
+                      <% end %>
+                      <span class="item-name"><%= experience.experience_name %></span>
+                      <span class="desc">
+                        <%= experience.experience_tagline %>
+                      </span>
+                    </div>  
+                  </a>
+              </div>
+            <% end %>
+          
+    </div>  
+</div>
+<% end %>
+
+<!-- PROFESSIONALS -->
+<div class="container exp-header">  
+  <h2>Connect with local Professionals</h2>
+  <p>Learn from local legends, like surf pros, up-and-coming artists, master chefs, and nonprofit founders.</p>
+</div>
+
+<div class="container grid-cards 2cols">
+    <div class="row">
+          <% if @users %>
+            <% @users.each do |user| %>
+                <% if user.isFeatured == true %>
+               <div class="col-sm-6">
+                <a href="users/<%= user.id %>">
+                  <div class="item">
+                    <img src="<%= image_url(user.image) %>" />
+                    <span class="desc"><%= user.description %></span>
+                  </div> 
+                </a> 
+              </div>
+              <% end %>
+            <% end %>
+          <% end %>
+    </div>  
+</div>
+
+
+<br />
+<br />
+<br class="clear" />
+
+<div class="be-host-box gradient-brand">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Want to host an experience?</h2>
+                <p>See what it takes to host an experience and show travelers your city.</p>
+            </div>
+            <div class="col-md-6">
+                <div class="actionBtn">
+                  <a href="#" class="btn btn-rounded">Become a Host</a>
+                </div>
+            </div>  
+        </div>    
+    </div>    
+</div>
+

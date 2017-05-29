@@ -1,0 +1,114 @@
+$main-color: #EA5B67;
+
+a .item img:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.item img {
+	transition: all 0.2s;
+}
+
+.item-name {
+	font-size: 1.5em;
+	color: $main-color;
+	text-transform: uppercase;
+	font-weight: 600
+}
+
+.experience-image {
+	max-width: 100%
+}
+
+.hero-banner-img-wrap {
+	height: 500px;
+}
+
+#schedule-modal h2 {
+	color: #ea5b67
+}
+#schedule-modal {
+	color: #555
+}
+
+.select {
+	color: #555;
+}
+
+.item .experience-image {
+	height: 340px;
+	object-fit: cover;
+}
+
+#schedule-modal .modal-content {
+	padding: 2em;
+}
+
+#schedule-modal .modal-body {
+	padding: 0;
+	margin-top: 1em;
+}
+
+#schedule-modal .row {
+	margin-bottom: 1em;
+	padding: 1em 0;
+	border-bottom: 1px solid #ccc;
+}
+
+#schedule-modal .btn {
+	margin-top: 0;
+}
+
+#schedule-modal .list-time {
+	font-size: 1.25em;
+}
+
+#schedule-modal .col-xs-9 {
+	margin-top: 0.55em;
+}
+
+#schedule-modal .col-xs-9,
+#schedule-modal .col-xs-3 {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#schedule-modal .modal-header {
+    padding-top:0;
+    padding-left: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+#schedule-modal .modal-body .row       {border:none;padding:10px; border-left: 1px solid #FFF}
+#schedule-modal .modal-body .row:hover {border:none;background-color: #f8f8f8; border-left:1px solid #ddd;}
+#schedule-modal .modal-body .row .btn  {float:right; padding:5px 20px;}
+
+
+/* 480 Breakpoint */
+@media only screen and (max-width: 480px) {
+    #schedule-modal .modal-header h2 {
+        font-size: 1.6em
+    }
+    #schedule-modal .list-time {
+        font-size: 12px;font-weight: bold;
+        display: block; 
+    }
+    #schedule-modal .modal-body .row {border:none;background-color: #f8f8f8; border-left:1px solid #ddd; margin-bottom: 10px; padding-right: 5px}
+    #schedule-modal .row .btn {padding:5px 10px; font-size: 12px}
+}
+
+
+/* 320 Breakpoint */
+@media only screen and (max-width: 320px) {
+    
+    #schedule-modal .modal-header h2 {
+        font-size: 1.2em
+    }
+    #schedule-modal .list-time {
+        font-size: 10px; font-weight: bold;
+        display: block; 
+    }
+    #schedule-modal .modal-body .row {border:none;background-color: #f8f8f8; border-left:1px solid #ddd; margin-bottom: 10px; padding-right: 5px}
+    #schedule-modal .row .btn {padding:5px 10px; font-size: 11px}
+}
+
