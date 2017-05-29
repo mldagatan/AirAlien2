@@ -35,5 +35,6 @@ Rails.application.routes.draw do
   post '/your_trips' => 'reservations#your_trips'
 
   get '/search' => 'pages#search'
+  get '/homes' => 'pages#homes'
 
 end
