@@ -14,9 +14,12 @@
 
 		<%= render 'shared/message' %>
 
-		<div class="container">
-			<%= yield %>	
-		</div>
+		
+		<%= yield %>	
+		<%= render 'shared/partial_footerbox' %>
+
+		  <%= render 'shared/modal_login' %>
+		  <%= render 'shared/modal_signup' %>
 		
 	</body>
 </html>

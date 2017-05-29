@@ -20,16 +20,26 @@ gem 'toastr-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+gem 'omniauth-oauth2'
+gem 'omniauth-google-oauth2'
+
+
 gem 'paperclip'
 
 gem 'geocoder'
 
 gem 'jquery-ui-rails'
+gem "font-awesome-rails"
 
 gem 'private_pub'
 gem 'thin'
 
 gem 'ransack'
+
+gem "jquery-slick-rails"
+gem "select2-rails"
+
+gem 'sendgrid-rails', '~> 2.0', '>= 2.0.5'
 
 group :development, :test do
   gem 'byebug'
