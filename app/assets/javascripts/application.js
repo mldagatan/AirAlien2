@@ -17,3 +17,5 @@
 //= require toastr
 //= require private_pub
 //= require_tree .
+//= require jquery.slick
+//= require select2-full
