@@ -11,12 +11,12 @@ class ExpreservationsController < ApplicationController
 				business: 'gohiso-seller@gmail.com',
 				cmd: '_xclick',
 				upload: 1,
-				notify_url: 'http://934a6daa.ngrok.io/exp_notify',
+				notify_url: 'http://ec2-34-208-88-113.us-west-2.compute.amazonaws.com:3000/exp_notify',
 				amount: @expreservation.total,
 				item_name: @expreservation.experience.experience_name,
 				item_number: @expreservation.id,
 				quantity: '1',
-				return: 'http://934a6daa.ngrok.io/exp_your_itineraries'
+				return: 'http://ec2-34-208-88-113.us-west-2.compute.amazonaws.com:3000/exp_your_itineraries'
 			}
 
 			redirect_to "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
