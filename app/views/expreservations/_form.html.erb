@@ -1,0 +1,33 @@
+
+
+    <div class="modal fade" id="schedule-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            	<div class="modal-header">
+            		<button type="button" class="close" data-dismiss="modal">&times;</button>
+        			<h4 class="modal-title">Modal Header</h4>
+            	</div>
+                <div class="modal-body">
+
+                  <% @experience.reservations do |experience| %>
+					<div class="row">
+						<%= form_for([@experience, @experience.expreservations.new]) do |f| %>
+						<div class="col-md-9">Hey There!</div>
+						<div class="col-md-3">
+							<%= f.submit "Book", class: "btn btn-primary" %>
+						</div>
+						<%= end %>
+					</div>
+                  <% end %>
+					
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+

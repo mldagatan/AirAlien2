@@ -2,6 +2,7 @@ class Experience < ActiveRecord::Base
   belongs_to :user
   has_many :expphotos
   has_many :activities
+  has_many :expreservations
 
   geocoded_by :city
   after_validation :geocode, if: :city_changed?

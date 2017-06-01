@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170529134420) do
+ActiveRecord::Schema.define(version: 20170601150601) do
 
   create_table "activities", force: :cascade do |t|
     t.datetime "start_time"
@@ -90,6 +90,21 @@ ActiveRecord::Schema.define(version: 20170529134420) do
   end
 
   add_index "expphotos", ["experience_id"], name: "index_expphotos_on_experience_id"
+
+  create_table "expreservations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "experience_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer  "price"
+    t.integer  "total"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.boolean  "status"
+  end
+
+  add_index "expreservations", ["experience_id"], name: "index_expreservations_on_experience_id"
+  add_index "expreservations", ["user_id"], name: "index_expreservations_on_user_id"
 
   create_table "messages", force: :cascade do |t|
     t.text     "content"

@@ -31,7 +31,9 @@ Rails.application.routes.draw do
   resources :activities
 
   resources :experiences do 
+    resources :expreservations, only: [:create]
     resources :activities
+
   end
 
   get '/preload' => 'reservations#preload'
@@ -42,6 +44,12 @@ Rails.application.routes.draw do
 
   post '/notify' => 'reservations#notify'
   post '/your_trips' => 'reservations#your_trips'
+
+  get '/exp_your_itineraries' => 'expreservations#exp_your_itineraries'
+
+  post '/exp_notify' => 'expreservations#exp_notify'
+  post '/exp_your_itineraries' => 'expreservations#exp_your_itineraries'
+  
 
   get '/search' => 'pages#search'
   get '/homes' => 'pages#homes'
