@@ -356,38 +356,24 @@ hr {
 
 }
 
-.ghs-slider {position: relative;}
-.ghs-slider .item {width: 190px; height:250px;}
+.ghs-slider {  }
+.ghs-slider .item {width:335px; margin-right: 32px; position:relative; height:320px;}
 .ghs-slider .item p {padding:10px 0; font-size: 12px; font-weight: bold}
+.ghs-slider .item img {width: 100%;}
 .ghs-slider .item .badge { font-size: 14px; padding:4px 12px; }
 .ghs-slider .btn-primary {font-size: 10px;padding:5px 30px; text-transform: uppercase;letter-spacing: 1px}
 
-#ghscards-justbooked { }
-#ghscards-justbooked .item{ max-width:326px; margin-right: 35px }
-#ghscards-justbooked .item img{
-   width: 100%;
+.ghs-slider .item h4.title {
+    position: absolute; bottom: 5px; left: 15px;
+    font-size: 1.5em; text-transform: uppercase;
 }
 
-#featured-influencers {}
-
-#ghscards-featured { margin: 0; }
-#ghscards-featured .desc {font-size: 10px; font-weight: bold; margin-bottom: 0; text-align: center; color:#000;}
-
-#ghscards-featured .item{ width:326px; margin-right: 35px; position:relative;}
-#ghscards-featured .item img{
-  width: 100%;
-}
-#ghscards-featured .item h4.title {
-position: absolute; bottom: 5px; left: 15px;
-font-size: 1.5em; text-transform: uppercase;
+#gh-slider-002 .item{
+   width:340px;
+   height:218px;
 }
 
-#random-filter-1 {padding:0;}
-#ghscards-filter-1 {}
-#ghscards-filter-1 p {margin-top: 10px}
 
-#ghscards-filter-1.ghs-slider .item { width: 252px; margin-right: 20px;}
-#ghscards-filter-1.ghs-slider .item img {width:100%;}
 
 .slick-prev, .slick-next
 {
@@ -406,6 +392,7 @@ font-size: 1.5em; text-transform: uppercase;
   color: $main-color;
   font-size: 1.2em;
   text-align: center;
+  z-index: 9;
 }
 .slick-prev{ left: -40px; }
 .slick-next{ right: -40px; }
@@ -722,6 +709,11 @@ form.color-invert .form-control:focus{
   .card-header h3 {  
       font-size: 1.8em
   }
+  
+  .category-tabs ul li {
+     margin-right: 12px;
+  }
+
   .page-experiences .hero-quicksearch {
     margin-top: 420px;
   }
@@ -746,10 +738,9 @@ form.color-invert .form-control:focus{
      text-align: center
   }
 
-  .slick-prev, .slick-next
-  {
-    display: none;    
-  }
+  .slick-prev{ left: 20px; }
+  .slick-next{ right: 20px; }
+
   .ft-widget-top,
   .ft-widget-top .ft-tagline  {text-align: center}
   
