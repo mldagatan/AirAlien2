@@ -7,22 +7,22 @@
 
 @font-face {
  font-family: 'AvenirBook';
- src: url('fonts/Avenir-Book.ttf')  format('truetype');
+ src: url(/assets/Avenir-Book.ttf) format("truetype");
 }
 
 @font-face {
  font-family: 'AvenirBlack';
- src: url('fonts/Avenir-Black.ttf')  format('truetype');
+ src: url(/assets/Avenir-Black.ttf) format("truetype");
 }
 
 @font-face {
  font-family: 'TwCenMT';
- src: url('fonts/TwCenMT.ttf')  format('truetype');
+ src: url(/assets/TwCenMT.ttf) format("truetype");
 }
 
 @font-face {
  font-family: 'TwCenMTBold';
- src: url('fonts/TwCenMTBold.ttf')  format('truetype');
+ src: url(/assets/TwCenMTBold.ttf) format("truetype");
 }
 
 $main-color: #EA5B67;
@@ -60,6 +60,11 @@ body {
   min-height: 70px
 }
 
+.hero-header-noimage {
+   background-color:#FFF;
+   min-height: 70px;
+}
+
 .hero-header-navwrap {
   background-size: cover;
   height: 420px;
@@ -91,26 +96,30 @@ margin-top: 15px
 
 .navbar-default .navbar-brand {
   color: $main-color;
-  font-size: 2em;
   font-weight: 800;
   padding-left:0;
   height:70px;
 }
 .navbar-default .navbar-nav {
   padding-top: 20px;
+  font-family: 'TwCenMT', sans-serif;
+  font-weight: normal;
+  font-size: 0.9em;
+
 }
 .navbar-default .navbar-nav > li > a,
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   text-transform: uppercase;
   color: #FFF;
-  padding:5px 15px;
+  padding: 4px 14px;
   border-radius: 22px;
   outline: 0
 }
 .navbar-default .navbar-nav > li.hilite > a {
  color:#FFF;
- background:$main-color
+ background:$main-color;
+
 }
 
 .btn-primary.btn {
@@ -314,7 +323,7 @@ hr {
 .navbar-form .form-control {
   border:1px solid #1C2134;
   border-radius: 24px;
-  height: auto;
+  height: 32px;
 }
 
 
@@ -691,7 +700,7 @@ form.color-invert .form-control:focus{
     background: none;
     color:$main-color;
     border-radius: 0;
-    font-weight:bold;
+    font-weight:bold
   }
 
   .hero-header-navwrap {
