@@ -48,6 +48,14 @@ body {
   color:#FFF; border-color:#FFF;
 }
 
+.clear {clear:both;}
+a.default-link,
+a.default-link:hover,
+a.default-link:active {
+  text-decoration: none;
+  color: $main-color;
+}
+
 .nav-gradient {
   background: -moz-linear-gradient(top,  rgba(28,33,52,1) 0%, rgba(28,33,52,1) 1%, rgba(28,33,52,0.6) 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top,  rgba(28,33,52,1) 0%,rgba(28,33,52,1) 1%,rgba(28,33,52,0.6) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -345,14 +353,14 @@ hr {
   display: inline-block;
   padding-bottom: 4px;
 }
-.category-tabs ul li a.active,
+.category-tabs ul li.active a,
 .category-tabs ul li a:hover {
   border-bottom: 2px solid #EA5B67;
   text-decoration: none;
 }
 
 .card-header { 
-  margin-top: 45px;
+
 }
 
 .card-header h3 { 

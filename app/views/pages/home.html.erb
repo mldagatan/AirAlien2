@@ -21,8 +21,6 @@ Temp hide
 TO DO - apply this to AirAlienErnest Branch
 -->
 
-<br>
-
 <div id="featured-influencers">
     <div class="card-header featured-influencers">
         <h3>You Might Want to Look</h3>
@@ -100,10 +98,12 @@ TO DO - apply this to AirAlienErnest Branch
           			</a>
           		</div>	        		
 
+          		<br class="clear" />
           </div>
           <!--#gh-grid-001-->
-
-
+          <br />
+          
+          <p class="text-center"><a class="default-link" href="#">VIEW MORE</a></p>
 
     </div>    
 </div>  
@@ -136,18 +136,17 @@ TO DO - apply this to AirAlienErnest Branch
     </div>
 -->
 
-	  <div id="gh-grid-002" class="ghs-gallery-grid">
-	  	   <% @rooms.each do |room| %>
-	  		<div class="item">
-	  			<a href="#">
-	  				<%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
-	  			</a>
-	  		</div>	
-	  		<% end %>
-	  </div> 
-
-
-		
+    
+      <div id="gh-grid-002" class="ghs-gallery-grid">
+      	   <% @rooms.each do |room| %>
+      		<div class="item">
+      			<a href="#">
+      				<%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
+      			</a>
+      		</div>	
+      		<% end %>
+      		<p class="text-center"><a class="default-link" href="#">VIEW MORE</a></p>
+      </div> 
 
 
 </div>
