@@ -112,7 +112,7 @@ TO DO - apply this to AirAlienErnest Branch
 
 
 <div class="card-header">
-  <h3>Explore the world</h3>
+  <h3>You Might Want to Book</h3>
   <p class="text-center">See what peopel are travelling, all around the world.</p>
 </div>
 <div class="container">
@@ -136,15 +136,15 @@ TO DO - apply this to AirAlienErnest Branch
     </div>
 -->
 
-    <% @rooms.each do |room| %>
-      <div id="gh-grid-002" class="ghs-gallery-grid">
-      		<div class="item">
-      			<a href="#">
-      				<%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
-      			</a>
-      		</div>	
-      </div> 
-    <% end %>
+	  <div id="gh-grid-002" class="ghs-gallery-grid">
+	  	   <% @rooms.each do |room| %>
+	  		<div class="item">
+	  			<a href="#">
+	  				<%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
+	  			</a>
+	  		</div>	
+	  		<% end %>
+	  </div> 
 
 
 		
