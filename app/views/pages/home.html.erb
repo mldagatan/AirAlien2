@@ -25,12 +25,12 @@ TO DO - apply this to AirAlienErnest Branch
 
 <div id="featured-influencers">
     <div class="card-header featured-influencers">
-        <h3>Just for the Weekend</h3>
-        <p class="text-center">Discover new, inspiring places close to home.</p>
+        <h3>You Might Want to Look</h3>
+        <p class="text-center hide">Discover new, inspiring places close to home.</p>
     </div>
     <div class="container">  
-
-          <div id="gh-slider-001" class="ghs-slider">
+        <!--
+          <div id="gh-slider-001" class="ghs-slider hide">
               <div class="item">
                  <a href="search?utf8=%E2%9C%93&search=new+york">
                  <img src="<%= image_url('New_York.jpg') %>" class="" alt="" />
@@ -48,8 +48,62 @@ TO DO - apply this to AirAlienErnest Branch
                  <img src="<%= image_url('Berlin.jpg') %>" class="" alt="" />
                  </a>
                  <h4 class="title">Berlin</h4>
+              </div> 
+              <div class="item">
+                 <a href="search?utf8=%E2%9C%93&search=berlin">
+                 <img src="<%= image_url('Berlin.jpg') %>" class="" alt="" />
+                 </a>
+                 <h4 class="title">Berlin</h4>
               </div>         
           </div>
+        -->
+
+          <div id="gh-grid-001" class="ghs-gallery-grid">
+          		<div class="item">
+          			<a href="search?utf8=%E2%9C%93&search=">
+          				<img src="<%= image_url('SLICES-23.png') %>" class="" alt="" />
+          			</a>
+          		</div>	 
+          		<div class="item">
+          			<a href="search?utf8=%E2%9C%93&search=">
+          				<img src="<%= image_url('SLICES-24.png') %>" class="" alt="" />
+          			</a>
+          		</div>	  
+          		<div class="item">
+          			<a href="search?utf8=%E2%9C%93&search=">
+          				<img src="<%= image_url('SLICES-25.png') %>" class="" alt="" />
+          			</a>
+          		</div>	   
+          		<div class="item">
+          			<a href="search?utf8=%E2%9C%93&search=">
+          				<img src="<%= image_url('SLICES-26.png') %>" class="" alt="" />
+          			</a>
+          		</div>	  
+          		<div class="item">
+          			<a href="search?utf8=%E2%9C%93&search=">
+          				<img src="<%= image_url('SLICES-27.png') %>" class="" alt="" />
+          			</a>
+          		</div>	  
+          		<div class="item">
+          			<a href="search?utf8=%E2%9C%93&search=">
+          				<img src="<%= image_url('SLICES-28.png') %>" class="" alt="" />
+          			</a>
+          		</div>	   
+          		<div class="item">
+          			<a href="search?utf8=%E2%9C%93&search=">
+          				<img src="<%= image_url('SLICES-29.png') %>" class="" alt="" />
+          			</a>
+          		</div>	   
+          		<div class="item">
+          			<a href="search?utf8=%E2%9C%93&search=">
+          				<img src="<%= image_url('SLICES-30.png') %>" class="" alt="" />
+          			</a>
+          		</div>	        		
+
+          </div>
+          <!--#gh-grid-001-->
+
+
 
     </div>    
 </div>  
@@ -62,15 +116,16 @@ TO DO - apply this to AirAlienErnest Branch
   <p class="text-center">See what peopel are travelling, all around the world.</p>
 </div>
 <div class="container">
-    <div id="gh-slider-002" class="ghs-slider">
 
+<!--
+    <div id="gh-slider-002" class="ghs-slider hide">
 	<% @rooms.each do |room| %>
 
         <div class="item">
            <a href="#">
            <%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
            </a>
-           <!--# will fix this soon -->
+           # will fix this soon 
 			<div class="panel-body hide">
 				<%= image_tag avatar_url(room.user), class: "img-circle avatar-small" %>&nbsp;
 				<%= link_to room.listing_name, room %>
@@ -78,8 +133,23 @@ TO DO - apply this to AirAlienErnest Branch
         </div> 
 
 	<% end %>
-
     </div>
+-->
+
+    <% @rooms.each do |room| %>
+      <div id="gh-grid-002" class="ghs-gallery-grid">
+      		<div class="item">
+      			<a href="#">
+      				<%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
+      			</a>
+      		</div>	
+      </div> 
+    <% end %>
+
+
+		
+
+
 </div>
 <br />
 <br />
@@ -104,6 +174,8 @@ TO DO - apply this to AirAlienErnest Branch
 				$('#start_date').datepicker("option", "maxDate", selected);
 			}
 		});
+
+		//alert( $('body').width() );
 	})
 
 

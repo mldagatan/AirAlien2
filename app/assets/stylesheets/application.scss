@@ -495,6 +495,12 @@ hr {
 .itr_details .link_options a,
 .itr_details .link_options i {color:#FFF;}
 
+.ghs-gallery-grid {}
+.ghs-gallery-grid .item {width:260px; list-style: none; display:inline-block; float:left; margin:0 10px 10px 0; padding:0;}
+.ghs-gallery-grid .item:nth-child(4n) {margin-right:0;}
+.ghs-gallery-grid .item img {width:100%;}
+
+
 /* FOOTER */
 footer {
   color:#FFF;
@@ -675,6 +681,15 @@ form.color-invert .form-control:focus{
 
 .modal-header h2 {margin:0;padding:0}
 
+/* 1180 Breakpoint */
+@media only screen and (max-width: 1180px) {
+  .ghs-gallery-grid .item {width:32%;margin-bottom: 2%}
+  .ghs-gallery-grid .item,
+  .ghs-gallery-grid .item:nth-child(4n) {margin-right:2%;}
+  .ghs-gallery-grid .item:nth-child(3n) {margin-right:0}
+
+}
+
 /* 820 Breakpoint */
 @media only screen and (max-width: 820px) {
 
@@ -736,6 +751,13 @@ form.color-invert .form-control:focus{
   #ghscards-filter-1.ghs-slider .item {
     margin-right: 10px;
   }
+
+  .ghs-gallery-grid .item {width:47.9%;margin-bottom: 4%}
+  .ghs-gallery-grid .item,
+  .ghs-gallery-grid .item:nth-child(4n),
+  .ghs-gallery-grid .item:nth-child(3n) {margin-right:0}
+  .ghs-gallery-grid .item:nth-child(odd) {margin-right: 4%}
+
 
   .be-host-box {
       height: 300px;
