@@ -105,7 +105,8 @@
         <div class="exp-card-container">
              <div class="exp-card" data-spy="affix" data-offset-top="90" data-offset-bottom="530">
   			<% @expphotos.each do |expphoto| %>
-  				<%= image_tag expphoto.image.url(), class: "experience-image" %>
+  				
+          <img src="<%= image_url(expphoto.image_file_name) %>" class="experience-image"/>
   			<% end %>
              	<!--
                <img src="https://a0.muscache.com/im/pictures/c380debc-e608-4b0f-9df1-73a9474ccd5a.jpg?aki_policy=xl_poster" />
