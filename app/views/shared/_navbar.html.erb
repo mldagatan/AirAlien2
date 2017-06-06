@@ -80,6 +80,23 @@
       </div>
     </nav>
 
+    <% if current_page?(root_path) %>
+    <div class="container">
+        <div class="text-desc">
+            <h2>Marlon Stockinger</h2>
+            <p>Nonumy postea malorum ex pro, ne luptatum accommodare vis. Ex vim illum lorem, ad est suas mediocritatem.</p>
+            <div class="rating-stars">
+                <i class='fa fa-star'></i>
+                <i class='fa fa-star'></i>
+                <i class='fa fa-star'></i>
+                <i class='fa fa-star'></i>
+                <i class='fa fa-star-o'></i>
+            </div>
+        </div>
+    </div>
+
+    <% end %>
+
 </div>
 
 <% if current_page?(root_path) || current_page?(homes_path) %>
