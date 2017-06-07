@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  devise_for :administrators
   root 'pages#home'
 
   devise_for 	:users, 
@@ -9,6 +8,8 @@ Rails.application.routes.draw do
   						:controllers => {:omniauth_callbacks => 'omniauth_callbacks',
   														 :registrations => 'registrations'
   														}
+
+  devise_for :administrators, :path => '', :path_names => {:sign_in => 'admin_login'}
 
   resources :users, only: [:show]
   resources :rooms
