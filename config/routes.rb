@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :administrators
   root 'pages#home'
 
   devise_for 	:users, 
