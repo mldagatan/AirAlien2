@@ -33,7 +33,11 @@ Rails.application.routes.draw do
   resources :experiences do 
     resources :expreservations, only: [:create]
     resources :activities
+  end
 
+  resources :professionals, only: [:index, :show] do
+    post 'submit_application', on: :member
+    get 'apply', on: :member
   end
 
   get '/preload' => 'reservations#preload'

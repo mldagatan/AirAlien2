@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  government_id_type: MyString
+  approved: false
+  user_id: 
+
+two:
+  government_id_type: MyString
+  approved: false
+  user_id: 

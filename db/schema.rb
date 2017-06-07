@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170601150601) do
+ActiveRecord::Schema.define(version: 20170607104516) do
 
   create_table "activities", force: :cascade do |t|
     t.datetime "start_time"
@@ -48,6 +48,20 @@ ActiveRecord::Schema.define(version: 20170601150601) do
   end
 
   add_index "actphotos", ["activity_id"], name: "index_actphotos_on_activity_id"
+
+  create_table "approvals", force: :cascade do |t|
+    t.string   "government_id_type"
+    t.boolean  "approved"
+    t.integer  "user_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "government_id_file_name"
+    t.string   "government_id_content_type"
+    t.integer  "government_id_file_size"
+    t.datetime "government_id_updated_at"
+  end
+
+  add_index "approvals", ["user_id"], name: "index_approvals_on_user_id"
 
   create_table "conversations", force: :cascade do |t|
     t.integer  "sender_id"
@@ -146,11 +160,11 @@ ActiveRecord::Schema.define(version: 20170601150601) do
 
   create_table "reviews", force: :cascade do |t|
     t.text     "comment"
-    t.integer  "star"
+    t.integer  "star",       default: 1
     t.integer  "room_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "reviews", ["room_id"], name: "index_reviews_on_room_id"
@@ -204,6 +218,7 @@ ActiveRecord::Schema.define(version: 20170601150601) do
     t.string   "phone_number"
     t.text     "description"
     t.boolean  "isFeatured"
+    t.integer  "user_level",             default: 0,  null: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

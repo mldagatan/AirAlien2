@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :reservations
   has_many :reviews
   has_many :expreservations
+  has_one :approval
 
   def self.from_omniauth(auth)
     user = User.where(email: auth.info.email).first
@@ -29,4 +30,16 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.user_levels
+    [
+      'regular',
+      'professional',
+      'silver professional',
+      'gold professional'
+    ]
+  end
+
+  def user_level_readable
+    User.user_levels[self.user_level]
+  end
 end
