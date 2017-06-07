@@ -1,5 +1,6 @@
 class ProfessionalsController < ApplicationController
   before_action :set_professional, only: [:show]
+  before_action :user_logged_in, only: [:apply, :submit_application]
   def index
   	@professionals = Professional::User.all
   end
