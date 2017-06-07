@@ -31,7 +31,7 @@
 
           <ul class="nav navbar-nav navbar-right">
             
-            <% if(!user_signed_in?) %>
+            <% if !user_signed_in? && !administrator_signed_in? %>
 
               <li>
                  <a href="#modal-gohiso-login" data-toggle="modal" data-target="#modal-gohiso-login">
@@ -41,7 +41,7 @@
               <li><a href="#modal-gohiso-signup" data-toggle="modal" data-target="#modal-gohiso-signup">
                   Sign Up
                  </a></li>
-            <% else %>
+            <% elsif user_signed_in? %>
               
               <% if current_user.user_level != 0 || nil %>
                 <li class="hilite">
@@ -69,6 +69,13 @@
                   <li><a href="#">Account Setting</a></li>
                   <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
                 </ul>
+              </li>
+            <% elsif administrator_signed_in? %>
+              <li class="hilite">
+                <%= link_to "Administration", "#" %>
+              </li>
+              <li>
+                <%= link_to "Log Out", destroy_administrator_session_path, method: :delete %>
               </li>
             <% end %>
 
