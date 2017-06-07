@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :administration do
-  get 'dashboard/index'
-  end
-
   root 'pages#home'
 
   devise_for 	:users, 
@@ -52,6 +48,9 @@ Rails.application.routes.draw do
 
   namespace :administration do
     get "dashboard", to: "dashboard#index", as: "dashboard"
+    resources "professionals", only: [:index] do
+      get "for_approval", on: :collection
+    end
   end
 
   get '/preload' => 'reservations#preload'
