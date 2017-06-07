@@ -41,6 +41,8 @@ gem "select2-rails"
 
 gem 'sendgrid-rails', '~> 2.0', '>= 2.0.5'
 
+gem 'simple_form'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
