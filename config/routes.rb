@@ -37,7 +37,7 @@ Rails.application.routes.draw do
 
   resources :professionals, only: [:index, :show] do
     post 'submit_application', on: :member
-    get 'apply', on: :member
+    get 'apply', on: :collection
   end
 
   get '/preload' => 'reservations#preload'

@@ -1,2 +1,12 @@
-<h1>Professionals#become_a_professional</h1>
-<p>Find me in app/views/professionals/become_a_professional.html.erb</p>
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+		<h1 class="text-center">
+			Become a Professional
+		</h1>
+		<% if current_user.approval %>
+			<p>Well, your application is being processed so don't you worry you!</p>
+		<% else %>
+			<%= render 'apply_form' %>
+		<% end %>
+	</div>
+</div>

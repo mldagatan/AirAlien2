@@ -1,0 +1,7 @@
+<p class="text-center">So, you wanted to take the next step of becoming a professional huh?</p>
+<hr>
+<%= simple_form_for current_user.build_approval, url: submit_application_professional_path(current_user), method: :post do |f| %>
+	<%= f.input :government_id_type, as: :select, collection: Approval.id_types, include_blank: false %>
+	<%= f.input :government_id, label: "Photo of Government ID" %>
+	<%= f.submit "Make me a professional", class: "btn-lg btn-default" %>
+<% end %>

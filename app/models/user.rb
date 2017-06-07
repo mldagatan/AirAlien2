@@ -42,4 +42,7 @@ class User < ActiveRecord::Base
   def user_level_readable
     User.user_levels[self.user_level]
   end
+
+  # scopes
+  scope :for_approval, lambda {joins(:approval)}
 end

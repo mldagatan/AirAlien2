@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607104516) do
+ActiveRecord::Schema.define(version: 20170607121944) do
 
   create_table "activities", force: :cascade do |t|
     t.datetime "start_time"
@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 20170607104516) do
 
   create_table "approvals", force: :cascade do |t|
     t.string   "government_id_type"
-    t.boolean  "approved"
     t.integer  "user_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
@@ -142,6 +141,15 @@ ActiveRecord::Schema.define(version: 20170607104516) do
   end
 
   add_index "photos", ["room_id"], name: "index_photos_on_room_id"
+
+  create_table "professional_profiles", force: :cascade do |t|
+    t.text     "about_me"
+    t.integer  "professional_user_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "professional_profiles", ["professional_user_id"], name: "index_professional_profiles_on_professional_user_id"
 
   create_table "reservations", force: :cascade do |t|
     t.integer  "user_id"
