@@ -6,10 +6,14 @@ Rails.application.routes.draw do
   						:path => '', 
   						:path_names => {:sign_in => 'login', :sign_out => 'logout', :edit => 'profile'},
   						:controllers => {:omniauth_callbacks => 'omniauth_callbacks',
-  														 :registrations => 'registrations'
+  														 :registrations => 'registrations',
+                               :sessions => 'users/sessions'
   														}
 
-  devise_for :administrators, :path => '', :path_names => {:sign_in => 'admin_login'}
+  devise_for :administrators,
+             path: '',
+             path_names: {sign_in: 'admin_login', sign_out: "admin_logout"},
+             controllers: {sessions: "administrators/sessions"}
 
   resources :users, only: [:show]
   resources :rooms
