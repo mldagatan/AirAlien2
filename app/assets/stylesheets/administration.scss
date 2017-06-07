@@ -1,0 +1,33 @@
+// Place all the styles related to the administration controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#administration-header{
+	background: #111;
+	padding: 0 0 1rem;
+	margin-top: -20px;
+}
+
+#administration-navigation{
+	background: #333;
+	padding: 0.75rem 0;
+	.nav {
+		li a{
+			color: #fff;
+			&:hover{
+				background: #555;
+			}
+			&.focus {
+				background: #555;
+			}
+		}
+		li.active a{
+			background: #555;
+		}
+	}
+}
+
+#administration-content{
+	min-height: 50vh;
+}

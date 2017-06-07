@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :administration do
+  get 'dashboard/index'
+  end
+
   root 'pages#home'
 
   devise_for 	:users, 
@@ -44,6 +48,10 @@ Rails.application.routes.draw do
   resources :professionals, only: [:index, :show] do
     post 'submit_application', on: :member
     get 'apply', on: :collection
+  end
+
+  namespace :administration do
+    get "dashboard", to: "dashboard#index", as: "dashboard"
   end
 
   get '/preload' => 'reservations#preload'
