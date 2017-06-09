@@ -41,8 +41,8 @@ class Administration::ServiceCategoriesController < AdministrationController
   end
 
   def service_params
-  	params.require(:service).permit(
-  		:title, :description, :slug, :minimum_rate, :maximum_rate, :comission_percentage,
+  	params.require(:service_category).permit(
+  		:title, :description, :slug, :minimum_rate, :maximum_rate, :commission_percentage,
   		questions_attributes: [
   			:id, :_destroy, :label, :question,
   			answers_attributes: [

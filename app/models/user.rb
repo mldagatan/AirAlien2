@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
   has_many :reviews
   has_many :expreservations
   has_one :approval
+  has_many :bookings, class_name: "Service::Booking", foreign_key: :user_id
+  has_many :my_answers, through: :booking
+  has_many :payments, through: :bookings
+  has_many :addresses, through: :bookings
 
   def self.from_omniauth(auth)
     user = User.where(email: auth.info.email).first

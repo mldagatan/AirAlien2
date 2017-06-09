@@ -1,6 +1,7 @@
 class Service::Booking < ActiveRecord::Base
   belongs_to :user
   belongs_to :service, class_name: "Service::Service", foreign_key: :service_service_id
+  has_one :service_category, through: :service
   has_one :professional, through: :service
   has_one :address, as: :adressable
   has_one :payment, as: :payable
@@ -49,5 +50,6 @@ class Service::Booking < ActiveRecord::Base
   		self.price = service.discounted_rate
   	else
   		self.price = service.rate
+    end
   end
 end

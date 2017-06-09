@@ -315,14 +315,14 @@ ActiveRecord::Schema.define(version: 20170609024517) do
   add_index "service_categories", ["id", "slug"], name: "index_service_categories_on_id_and_slug"
 
   create_table "service_my_answers", force: :cascade do |t|
-    t.integer  "service_service_id"
+    t.integer  "service_booking_id"
     t.integer  "answer_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
   add_index "service_my_answers", ["answer_id"], name: "index_service_my_answers_on_answer_id"
-  add_index "service_my_answers", ["service_service_id"], name: "index_service_my_answers_on_service_service_id"
+  add_index "service_my_answers", ["service_booking_id"], name: "index_service_my_answers_on_service_booking_id"
 
   create_table "service_services", force: :cascade do |t|
     t.integer  "professional_id"

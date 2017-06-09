@@ -1,9 +1,8 @@
 class Service::Service < ActiveRecord::Base
-  belongs_to :professional
+  belongs_to :professional, class_name: "Professional::User", foreign_key: :professional_id
   belongs_to :service_category, class_name: "Service::Category", foreign_key: :service_category_id
   has_many :bookings, class_name: "Service::Booking", foreign_key: :service_service_id
   has_many :bookees, through: :bookings
-  has_many :my_answers, class_name: "Service::MyAnswer", foreign_key: :service_service_id
   has_many :questions, through: :service_category
   has_many :images, as: :imageable
   has_one :address, as: :addressable
