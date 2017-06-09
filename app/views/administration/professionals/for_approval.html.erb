@@ -1,2 +1,19 @@
-<h1>Administration::Professionals#for_approval</h1>
-<p>Find me in app/views/administration/professionals/for_approval.html.erb</p>
+<h2>Pending Approvals for Professionals</h2>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Email</th>
+			<th>ID Type</th>
+			<th>ID Img</th>
+			<th>Approved</th>
+			<th colspan="1"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @pending_professionals.each do |pending| %>
+			<%= render 'pending_row', p: pending %>
+		<% end %>
+	</tbody>
+</table>

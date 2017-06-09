@@ -50,6 +50,7 @@ Rails.application.routes.draw do
     get "dashboard", to: "dashboard#index", as: "dashboard"
     resources "professionals", only: [:index] do
       get "for_approval", on: :collection
+      post "approve", on: :member
     end
   end
 

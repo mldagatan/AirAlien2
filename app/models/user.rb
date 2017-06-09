@@ -43,6 +43,10 @@ class User < ActiveRecord::Base
     User.user_levels[self.user_level]
   end
 
+  def approved?
+    self.user_level != 0 && self.approval
+  end
+
   # scopes
   scope :for_approval, lambda {joins(:approval)}
 end
