@@ -1,21 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :administration do
-  get 'service_categories/index'
-  end
-
-  namespace :administration do
-  get 'service_categories/new'
-  end
-
-  namespace :administration do
-  get 'service_categories/edit'
-  end
-
-  namespace :administration do
-  get 'service_categories/show'
-  end
-
   root 'pages#home'
 
   devise_for 	:users, 
@@ -61,6 +45,15 @@ Rails.application.routes.draw do
     post 'submit_application', on: :member
     get 'apply', on: :collection
   end
+
+  resources :services, only: [:index, :show] do
+    post :book, on: :member
+  end
+
+  get '/my_services' => 'services#my_services'
+
+  resources :my_services, controller: "services", only: [:new, :edit, :create, :update, :destroy]
+
 
   namespace :administration do
     get "dashboard", to: "dashboard#index", as: "dashboard"

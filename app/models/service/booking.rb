@@ -3,7 +3,7 @@ class Service::Booking < ActiveRecord::Base
   belongs_to :service, class_name: "Service::Service", foreign_key: :service_service_id
   has_one :service_category, through: :service
   has_one :professional, through: :service
-  has_one :address, as: :adressable
+  has_one :address, as: :addressable
   has_one :payment, as: :payable
 
   validates_presence_of :address, if: :visit?

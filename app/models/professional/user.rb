@@ -5,5 +5,7 @@ class Professional::User < User
   has_many :services, class_name: "Service::Service", foreign_key: :professional_id
   has_many :bookings, class_name: "Service::Bookings", through: :services
   has_many :service_categories, through: :services
+
+  accepts_nested_attributes_for :services
   
 end

@@ -22,11 +22,11 @@ class Image < ActiveRecord::Base
 
   validates_attachment_content_type :img, content_type: /\Aimage\/.*\z/
 
-  before_save :extract_dimensions
+  # before_save :extract_dimensions
 
-  private
-  def extract_dimensions
-		geometry = Paperclip::Geometry.from_file(tempfile)
-    self.dimensions = [geometry.width.to_i, geometry.height.to_i]
-  end
+  # private
+  # def extract_dimensions
+		# geometry = Paperclip::Geometry.from_file(img)
+  #   self.dimensions = [geometry.width.to_i, geometry.height.to_i]
+  # end
 end

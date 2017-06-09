@@ -7,10 +7,14 @@ class Service::Service < ActiveRecord::Base
   has_many :images, as: :imageable
   has_one :address, as: :addressable
 
+  accepts_nested_attributes_for :images, reject_if: :all_blank, allow_destroy: true
+
+  scope :approved, lambda {where(status: 1)}
+
   validates :rate,
   					numericality: {
-  						greater_than_or_equal_to: :maximum_rate,
-  						less_than_or_equal_to: :minimum_rate
+  						less_than_or_equal_to: :maximum_rate,
+  						greater_than_or_equal_to: :minimum_rate
   					}
   validates :description,
   					presence: true,
@@ -25,6 +29,8 @@ class Service::Service < ActiveRecord::Base
   						maximum: 500
   					}
   validates :discounted_rate,
+            allow_nil: true,
+            allow_blank: true,
   					numericality: {
   						less_than_or_equal_to: :rate
   					}
@@ -39,7 +45,7 @@ class Service::Service < ActiveRecord::Base
   end
 
   def status_readable
-  	Service.statuses[self.status]
+  	Service::Service.statuses[self.status]
   end
 
   def maximum_rate

@@ -1,0 +1,9 @@
+<div class="nested-fields col-sm-12 col-md-6 col-lg-4">
+	<% if f.object.img.present? %>
+		<%= image_tag f.object.img.url(:s_thumb) %>
+	<% end %>
+	<%= f.input :img %>
+	<%= f.input :description %>
+	<%= link_to_remove_association "Remove Image", f, class: "btn btn-danger" %>
+<hr>
+</div>

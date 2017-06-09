@@ -45,7 +45,7 @@
               
               <% if current_user.user_level != 0 || nil %>
                 <li class="hilite">
-                  <%= link_to "New Service", new_room_path %>
+                  <%= link_to "New Service", new_my_service_path %>
                 </li>
               <% else %>
                 <li class="hilite">
@@ -60,6 +60,7 @@
                 </a>
 
                 <ul class="dropdown-menu">
+                  <li><%= link_to "My Services", my_services_path %></li>
                   <li><%= link_to "Your Listings", rooms_path %></li>
                   <li><%= link_to "Your Reservations", your_reservations_path %></li>
                   <li><%= link_to "Your Trips", your_trips_path %></li>

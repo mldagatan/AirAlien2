@@ -51,6 +51,10 @@ class User < ActiveRecord::Base
     self.user_level != 0 && self.approval
   end
 
+  def professional?
+    self.user_level != 0
+  end
+
   # scopes
   scope :for_approval, lambda {joins(:approval)}
 end

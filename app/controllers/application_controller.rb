@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_paramters, if: :devise_controller?
+  before_action :designate_current_user
 
   def user_logged_in
 		if !user_signed_in?
@@ -20,6 +21,14 @@ class ApplicationController < ActionController::Base
 	def prevent_user
 		if user_signed_in?
 			redirect_to root_path, notice: "Well. This is awkward."
+		end
+	end
+
+	def designate_current_user
+		if user_signed_in?
+			if current_user.professional?
+				@current_user = Professional::User.find(current_user.id)
+			end
 		end
 	end
 
