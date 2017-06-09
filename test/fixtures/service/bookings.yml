@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  service_service_id: 
+  date: 2017-06-09 10:44:15
+  status: 1
+  price: 9.99
+
+two:
+  user_id: 
+  service_service_id: 
+  date: 2017-06-09 10:44:15
+  status: 1
+  price: 9.99

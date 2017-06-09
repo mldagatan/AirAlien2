@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  professional_id: 
+  description: MyText
+  rate: 9.99
+  discounted_rate: 9.99
+  status: 1
+  service_category_id: 
+
+two:
+  professional_id: 
+  description: MyText
+  rate: 9.99
+  discounted_rate: 9.99
+  status: 1
+  service_category_id: 

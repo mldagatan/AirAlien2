@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  minimum_rate: 9.99
+  maximum_rate: 9.99
+  comission_percentage: 9.99
+
+two:
+  title: MyString
+  description: MyText
+  minimum_rate: 9.99
+  maximum_rate: 9.99
+  comission_percentage: 9.99
