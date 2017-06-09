@@ -1,0 +1,34 @@
+<%= simple_form_for @service_category, url: administration_service_categories_path, method: :post do |f| %>
+	<div class="row">
+		<div class="col-sm-12 col-md-6">
+			<%= f.input :title, as: :string %>
+		</div>
+		<div class="col-sm-12 col-md-6">
+			<%= f.input :slug %>
+			<p><i>Slug is not required, it is automatically generated from the title if none is provided. this is the identifier of this category.</i></p>
+		</div>
+	</div>
+	<%= f.input :description %>
+	<div class="row">
+		<div class="col-sm-4">
+			<%= f.input :minimum_rate %>
+		</div>
+		<div class="col-sm-4">
+			<%= f.input :maximum_rate %>
+		</div>
+		<div class="col-sm-4">
+			<%= f.input :commission_percentage %>
+		</div>
+	</div>
+
+	<h3>Questions</h3>
+	<div id="questions">
+		<%= f.simple_fields_for :questions do |q| %>
+			<%= render 'question_fields', f: q %>
+		<% end %>
+		<div class="links">
+			<%= link_to_add_association 'Add Question', f, :questions, class: "btn btn-primary" %>
+		</div>
+	</div>
+	<%= f.submit class: "btn btn-lg btn-success" %>
+<% end %>

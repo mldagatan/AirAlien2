@@ -1,0 +1,16 @@
+<div class="nested-fields">
+	<%= f.input :label %>
+	<p><i>The label is displayed, in place of the question, in the service once a professional answers the question.</i></p>
+	<%= f.input :question %>
+	<h4>Answers</h4>
+	<div id="answers">
+		<%= f.simple_fields_for :answers do |answer| %>
+			<%= render "answer_fields", f: answer %>
+		<% end %>
+		<div class="links">
+			<%= link_to_add_association "Add Answers", f, :answers, class: "btn btn-warning" %>
+		</div>
+	</div>
+	<%= link_to_remove_association "Remove Question", f, class: "btn btn-danger" %>
+	<hr>
+</div>

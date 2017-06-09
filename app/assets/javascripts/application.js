@@ -19,3 +19,4 @@
 //= require_tree .
 //= require jquery.slick
 //= require select2-full
+//= require cocoon

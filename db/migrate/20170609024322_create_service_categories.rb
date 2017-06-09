@@ -5,7 +5,7 @@ class CreateServiceCategories < ActiveRecord::Migration
       t.text :description, null: false, default: ""
       t.decimal :minimum_rate, null: false, default: 0.00
       t.decimal :maximum_rate
-      t.decimal :comission_percentage, null: false, default: 0.00
+      t.decimal :commission_percentage, null: false, default: 0.00
       t.string :slug, null: false, default: "", uniq: true
 
       t.timestamps null: false

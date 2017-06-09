@@ -16,7 +16,8 @@ class Payment < ActiveRecord::Base
   		'Paid',
   		# Completed status is for paypal
   		'Completed',
-  		'Cancelled'
+  		'Cancelled',
+      'Declined'
   	]
   end
 

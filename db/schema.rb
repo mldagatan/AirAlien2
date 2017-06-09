@@ -302,14 +302,14 @@ ActiveRecord::Schema.define(version: 20170609024517) do
   add_index "service_bookings", ["user_id"], name: "index_service_bookings_on_user_id"
 
   create_table "service_categories", force: :cascade do |t|
-    t.string   "title",                default: "",  null: false
-    t.text     "description",          default: "",  null: false
-    t.decimal  "minimum_rate",         default: 0.0, null: false
+    t.string   "title",                 default: "",  null: false
+    t.text     "description",           default: "",  null: false
+    t.decimal  "minimum_rate",          default: 0.0, null: false
     t.decimal  "maximum_rate"
-    t.decimal  "comission_percentage", default: 0.0, null: false
-    t.string   "slug",                 default: "",  null: false
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.decimal  "commission_percentage", default: 0.0, null: false
+    t.string   "slug",                  default: "",  null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_index "service_categories", ["id", "slug"], name: "index_service_categories_on_id_and_slug"

@@ -4,14 +4,16 @@ class Service::Category < ActiveRecord::Base
 	has_many :answers, through: :questions
 	has_many :professionals, through: :services
 
+	accepts_nested_attributes_for :questions, reject_if: :all_blank, allow_destroy: true
+	accepts_nested_attributes_for :answers,  reject_if: :all_blank, allow_destroy: true
+
 	validates :title, :description, :minimum_rate, :maximum_rate, presence: true
-	validates :comission_percentage,
+	validates :commission_percentage,
 						presence: true,
 						numericality: {
 							less_than_or_equal_to: 100
 						}
 	validates :slug,
-						presence: true,
 						uniqueness: true
 
 	before_validation :set_slug
