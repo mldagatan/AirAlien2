@@ -6,6 +6,7 @@ class CreateServiceBookings < ActiveRecord::Migration
       t.datetime :date
       t.integer :status
       t.decimal :price
+      t.text :notes
 
       t.timestamps null: false
     end

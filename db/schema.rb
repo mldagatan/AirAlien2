@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607122920) do
+ActiveRecord::Schema.define(version: 20170609024517) do
 
   create_table "activities", force: :cascade do |t|
     t.datetime "start_time"
@@ -49,6 +49,22 @@ ActiveRecord::Schema.define(version: 20170607122920) do
 
   add_index "actphotos", ["activity_id"], name: "index_actphotos_on_activity_id"
 
+  create_table "addresses", force: :cascade do |t|
+    t.text     "first_line"
+    t.text     "second_line"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "postal_code"
+    t.integer  "address_type"
+    t.integer  "addressable_id"
+    t.string   "addressable_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "addresses", ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable_type_and_addressable_id"
+
   create_table "administrators", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -67,6 +83,15 @@ ActiveRecord::Schema.define(version: 20170607122920) do
 
   add_index "administrators", ["email"], name: "index_administrators_on_email", unique: true
   add_index "administrators", ["reset_password_token"], name: "index_administrators_on_reset_password_token", unique: true
+
+  create_table "answers", force: :cascade do |t|
+    t.text     "answer"
+    t.integer  "question_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
 
   create_table "approvals", force: :cascade do |t|
     t.string   "government_id_type"
@@ -138,6 +163,21 @@ ActiveRecord::Schema.define(version: 20170607122920) do
   add_index "expreservations", ["experience_id"], name: "index_expreservations_on_experience_id"
   add_index "expreservations", ["user_id"], name: "index_expreservations_on_user_id"
 
+  create_table "images", force: :cascade do |t|
+    t.text     "description"
+    t.string   "dimensions"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "img_file_name"
+    t.string   "img_content_type"
+    t.integer  "img_file_size"
+    t.datetime "img_updated_at"
+  end
+
+  add_index "images", ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
+
   create_table "messages", force: :cascade do |t|
     t.text     "content"
     t.integer  "conversation_id"
@@ -148,6 +188,20 @@ ActiveRecord::Schema.define(version: 20170607122920) do
 
   add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id"
   add_index "messages", ["user_id"], name: "index_messages_on_user_id"
+
+  create_table "payments", force: :cascade do |t|
+    t.decimal  "amount"
+    t.integer  "type"
+    t.integer  "status"
+    t.text     "description"
+    t.text     "parameters"
+    t.integer  "payable_id"
+    t.string   "payable_type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "payments", ["payable_type", "payable_id"], name: "index_payments_on_payable_type_and_payable_id"
 
   create_table "photos", force: :cascade do |t|
     t.integer  "room_id"
@@ -169,6 +223,17 @@ ActiveRecord::Schema.define(version: 20170607122920) do
   end
 
   add_index "professional_profiles", ["professional_user_id"], name: "index_professional_profiles_on_professional_user_id"
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "label"
+    t.text     "question"
+    t.integer  "questionable_id"
+    t.string   "questionable_type"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "questions", ["questionable_type", "questionable_id"], name: "index_questions_on_questionable_type_and_questionable_id"
 
   create_table "reservations", force: :cascade do |t|
     t.integer  "user_id"
@@ -221,6 +286,58 @@ ActiveRecord::Schema.define(version: 20170607122920) do
   end
 
   add_index "rooms", ["user_id"], name: "index_rooms_on_user_id"
+
+  create_table "service_bookings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "service_service_id"
+    t.datetime "date"
+    t.integer  "status"
+    t.decimal  "price"
+    t.text     "notes"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "service_bookings", ["service_service_id"], name: "index_service_bookings_on_service_service_id"
+  add_index "service_bookings", ["user_id"], name: "index_service_bookings_on_user_id"
+
+  create_table "service_categories", force: :cascade do |t|
+    t.string   "title",                default: "",  null: false
+    t.text     "description",          default: "",  null: false
+    t.decimal  "minimum_rate",         default: 0.0, null: false
+    t.decimal  "maximum_rate"
+    t.decimal  "comission_percentage", default: 0.0, null: false
+    t.string   "slug",                 default: "",  null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
+
+  add_index "service_categories", ["id", "slug"], name: "index_service_categories_on_id_and_slug"
+
+  create_table "service_my_answers", force: :cascade do |t|
+    t.integer  "service_service_id"
+    t.integer  "answer_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "service_my_answers", ["answer_id"], name: "index_service_my_answers_on_answer_id"
+  add_index "service_my_answers", ["service_service_id"], name: "index_service_my_answers_on_service_service_id"
+
+  create_table "service_services", force: :cascade do |t|
+    t.integer  "professional_id"
+    t.text     "title",               default: "", null: false
+    t.text     "description",         default: "", null: false
+    t.decimal  "rate",                             null: false
+    t.decimal  "discounted_rate"
+    t.integer  "status",              default: 0,  null: false
+    t.integer  "service_category_id"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  add_index "service_services", ["professional_id"], name: "index_service_services_on_professional_id"
+  add_index "service_services", ["service_category_id"], name: "index_service_services_on_service_category_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
 
+  namespace :administration do
+  get 'service_categories/index'
+  end
+
+  namespace :administration do
+  get 'service_categories/new'
+  end
+
+  namespace :administration do
+  get 'service_categories/edit'
+  end
+
+  namespace :administration do
+  get 'service_categories/show'
+  end
+
   root 'pages#home'
 
   devise_for 	:users, 
@@ -48,10 +64,11 @@ Rails.application.routes.draw do
 
   namespace :administration do
     get "dashboard", to: "dashboard#index", as: "dashboard"
-    resources "professionals", only: [:index] do
+    resources :professionals, only: [:index] do
       get "for_approval", on: :collection
       post "approve", on: :member
     end
+    resources :service_categories, only: [:index, :new, :create, :edit, :update, :delete]
   end
 
   get '/preload' => 'reservations#preload'
