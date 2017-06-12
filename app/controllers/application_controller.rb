@@ -18,6 +18,12 @@ class ApplicationController < ActionController::Base
 		end
 	end
 
+	def is_user_professional
+  	if !current_user.professional?
+  		redirect_to services_path, notice: "You are not a professional yet."
+  	end
+  end
+
 	def prevent_user
 		if user_signed_in?
 			redirect_to root_path, notice: "Well. This is awkward."

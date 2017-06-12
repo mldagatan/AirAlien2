@@ -1,0 +1,44 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 col-md-8">
+			<h1>Booking Info</h1>
+			<hr>
+			<dl>
+				<dt>Date</dt>
+				<dd><%= @booking.date %></dd>
+				<br>
+				<% if @booking.service.visit? %>
+				<dt>Address</dt>
+				<dd><%= @booking.address.display_address %></dd>
+				<br>
+				<% end %>
+				<dt>Availed Service</dt>
+				<dd><%= link_to @booking.service.title, edit_my_service_path(@booking.service) %></dd>
+			</dl>
+			<h3>Questionnaire Answers</h3>
+			<hr>
+			<dl>
+				<% @booking.my_answers.each do |answer| %>
+					<dt><%= answer.question.question %></dt>
+					<dd><%= answer.answer.answer %></dd>
+					<br>
+				<% end %>
+			</dl>
+		</div>
+		<div class="col-sm-12 col-md-4">
+			<h1>Client Info</h1>
+			<hr>
+			<dl>
+				<dt>Name</dt>
+				<dd><%= @booking.user.fullname %></dd>
+				<dt>Email</dt>
+				<dd><%= @booking.user.email %></dd>
+			</dl>
+			<h3>Action</h3>
+			<hr>
+			< Put actions here for approval >
+			<br>
+			<i>Not yet included, because this will require payment</i>
+		</div>
+	</div>
+</div>

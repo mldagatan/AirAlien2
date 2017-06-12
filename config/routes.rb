@@ -64,7 +64,9 @@ Rails.application.routes.draw do
 
 
   resources :my_bookings, controller: "bookings", only: [:index, :show, :edit]
+
   get '/client_bookings' => 'bookings#client_bookings'
+  get '/client_bookings/:id', to: "bookings#show_client", as: "show_client_booking"
 
   namespace :administration do
     get "dashboard", to: "dashboard#index", as: "dashboard"

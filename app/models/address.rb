@@ -31,7 +31,7 @@ class Address < ActiveRecord::Base
     if self.area?
       "#{self.city}, #{self.state}, #{self.country}"
     elsif self.location?
-      "#{self.first_address}, #{self.second_address}, #{self.city}, #{self.state}, #{self.country}"
+      "#{self.first_line}, #{self.second_line}, #{self.city}, #{self.state}, #{self.country}"
     end
   end
 end

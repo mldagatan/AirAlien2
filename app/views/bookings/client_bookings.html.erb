@@ -1,2 +1,26 @@
-<h1>Bookings#client_bookings</h1>
-<p>Find me in app/views/bookings/client_bookings.html.erb</p>
+<div class="container">
+	<h1>My Bookings</h1>
+
+	<table class="table">
+		<thead>
+			<th>ID</th>
+			<th>Date</th>
+			<th>Service</th>
+			<th>Category</th>
+			<th>Status</th>
+			<th colspan="1"></th>
+		</thead>
+		<tbody>
+			<% @bookings.each do |booking| %>
+				<tr>
+					<td><%= booking.id %></td>
+					<td><%= booking.date %></td>
+					<td><%= booking.service.title %></td>
+					<td><%= booking.service.category %></td>
+					<td><%= booking.status_readable %></td>
+					<td><%= link_to "View", show_client_booking_path(booking), class: "btn btn-primary" %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

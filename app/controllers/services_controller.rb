@@ -101,10 +101,4 @@ class ServicesController < ApplicationController
   		redirect_to services_path, notice: "You do not own this service."
   	end
   end
-
-  def is_user_professional
-  	if !current_user.professional?
-  		redirect_to services_path, notice: "You are not a professional yet."
-  	end
-  end
 end

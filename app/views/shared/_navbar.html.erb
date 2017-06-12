@@ -60,7 +60,11 @@
                 </a>
 
                 <ul class="dropdown-menu">
-                  <li><%= link_to "My Services", my_services_path %></li>
+                  <% if current_user.professional? %>
+                    <li><%= link_to "My Services", my_services_path %></li>
+                    <li><%= link_to "Client Bookings", client_bookings_path %></li>
+                  <% end %>
+                  <li><%= link_to "My Bookings", my_bookings_path %></li>
                   <li><%= link_to "Your Listings", rooms_path %></li>
                   <li><%= link_to "Your Reservations", your_reservations_path %></li>
                   <li><%= link_to "Your Trips", your_trips_path %></li>
