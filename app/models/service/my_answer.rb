@@ -6,6 +6,6 @@ class Service::MyAnswer < ActiveRecord::Base
   has_one :question, through: :answer
   has_one :professional, through: :service
 
-  validates :answer_id, :service_service_id, presence: true
-  validates_uniqueness_of :answer_id, scope: :service_service_id
+  validates :answer_id, presence: true
+  validates_uniqueness_of :answer_id, scope: :service_booking_id
 end

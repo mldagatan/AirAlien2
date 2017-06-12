@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
-  namespace :administration do
-  get 'services/index'
-  end
+  get 'bookings/index'
+
+  get 'bookings/client_bookings'
+
+  get 'bookings/show'
+
+  get 'bookings/edit'
 
   root 'pages#home'
 
@@ -58,6 +62,9 @@ Rails.application.routes.draw do
 
   resources :my_services, controller: "services", only: [:new, :edit, :create, :update, :destroy]
 
+
+  resources :my_bookings, controller: "bookings", only: [:index, :show, :edit]
+  get '/client_bookings' => 'bookings#client_bookings'
 
   namespace :administration do
     get "dashboard", to: "dashboard#index", as: "dashboard"

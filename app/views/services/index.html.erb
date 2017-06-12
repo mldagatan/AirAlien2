@@ -9,6 +9,7 @@
 				<h3><%= service.title %></h3>
 				<h5><i><%= service.category %></i></h5>
 				<p class="lead"><%= service.professional.fullname %></p>
+				<p class="lead"><%= number_to_currency service.rate %></p>
 				<p><%= service.address.address_type_readable.titleize %>: <%= service.address.display_address %></p>
 				<p><%= truncate service.description, length: 255 %></p>
 				<%= link_to "View", service_path(service), class: "btn btn-primary" %>

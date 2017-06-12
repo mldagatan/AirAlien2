@@ -289,15 +289,17 @@ ActiveRecord::Schema.define(version: 20170609024517) do
 
   create_table "service_bookings", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "professional_user_id"
     t.integer  "service_service_id"
     t.datetime "date"
     t.integer  "status"
     t.decimal  "price"
     t.text     "notes"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
+  add_index "service_bookings", ["professional_user_id"], name: "index_service_bookings_on_professional_user_id"
   add_index "service_bookings", ["service_service_id"], name: "index_service_bookings_on_service_service_id"
   add_index "service_bookings", ["user_id"], name: "index_service_bookings_on_user_id"
 

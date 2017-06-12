@@ -13,6 +13,15 @@ class ServicesController < ApplicationController
   end
 
   def show
+    @booking = @service.bookings.build
+
+    @service.questions.each do |q|
+      @booking.my_answers.build(question: q)
+    end
+
+    if @service.visit?
+      @booking.build_address
+    end
   end
 
   def new
@@ -52,6 +61,12 @@ class ServicesController < ApplicationController
   end
 
   def book
+    @booking = Service::Booking.new(booking_params)
+    if @booking.save
+      redirect_to service_path(params[:id]), notice: "Your booking request has been submitted. It will be reviewed by the professional and will get back to you."
+    else
+      render "show"
+    end
   end
 
   private
@@ -68,6 +83,17 @@ class ServicesController < ApplicationController
   			:id, :_destroy, :img, :description
   		]
   	)
+  end
+
+  def booking_params
+    params.require(:service_booking).permit(:user_id, :professional_user_id, :date, :notes, :service_service_id,
+      my_answers_attributes: [
+        :answer_id, :service_booking_id
+      ],
+      address_attributes: [
+        :first_line, :second_line, :city, :state, :country, :address_type
+      ]
+    )
   end
 
   def validate_service_ownership

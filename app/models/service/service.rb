@@ -59,7 +59,7 @@ class Service::Service < ActiveRecord::Base
   end
 
   def visit?
-  	address.location?
+  	address.area?
   end
 
   def discounted?
