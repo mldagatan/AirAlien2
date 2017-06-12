@@ -4,5 +4,5 @@
 	<td class="id-type"><%= p.approval.government_id_type %></td>
 	<td class="gov-id"><%= image_tag p.approval.government_id.url(:s_thumbnail) %></td>
 	<td class="approval-status"><%= p.approved? ? raw('<i class="glyphicon glyphicon-ok"></i>') : raw('<i class="glyphicon glyphicon-remove"></i>') %></td>
-	<td><%= link_to "Approve", approve_administration_professional_path(p), class: "btn btn-success" %></td>
+	<td><%= p.approved? ? "Already approved." : link_to("Approve", approve_administration_professional_path(p), class: "btn btn-success", method: :patch) %></td>
 </tr>

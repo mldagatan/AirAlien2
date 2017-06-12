@@ -5,6 +5,7 @@ class Service::Booking < ActiveRecord::Base
   has_one :professional, through: :service
   has_one :address, as: :addressable
   has_one :payment, as: :payable
+  has_many :my_answers, class_name: "Service::MyAnswers", foreign_key: :service_booking_id
 
   validates_presence_of :address, if: :visit?
   validates :date,

@@ -43,6 +43,7 @@ gem 'sendgrid-rails', '~> 2.0', '>= 2.0.5'
 
 gem 'simple_form'
 gem 'cocoon'
+gem 'country_select'
 
 group :development, :test do
   gem 'byebug'

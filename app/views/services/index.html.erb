@@ -1,1 +1,19 @@
-<h1>Services</h1>
+<div class="container">
+	<h1>Services</h1>
+	
+	<div class="row">
+	
+	<% @services.each do |service| %>
+			<div class="col-sm-12 col-md-4">
+				<%= image_tag service.images.first.img.url(:m_thumb) %>
+				<h3><%= service.title %></h3>
+				<h5><i><%= service.category %></i></h5>
+				<p class="lead"><%= service.professional.fullname %></p>
+				<p><%= service.address.address_type_readable.titleize %>: <%= service.address.display_address %></p>
+				<p><%= truncate service.description, length: 255 %></p>
+				<%= link_to "View", service_path(service), class: "btn btn-primary" %>
+			</div>
+	<% end %>
+
+	</div>
+</div>

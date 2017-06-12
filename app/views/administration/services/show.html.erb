@@ -1,0 +1,24 @@
+<h1><%= @service.title %></h1>
+<h3><%= @service.service_category.title %> | by <%= @service.professional.email %></h3>
+<h5>Rate:</h5>
+<h3><%= number_to_currency @service.rate %></h3>
+<% if @service.discounted? %>
+<h5>Discounted Rate:</h5>
+<h3><%= number_to_currency @service.discounted_rate %></h3>
+<% end %>
+<h5>Address Type</h5>
+<h3><%= @service.address.address_type_readable %></h3>
+<h5>Service Address</h5>
+<h3><%= @service.address.display_address %></h3>
+<h5>Status: <%= @service.status_readable %></h5>
+<hr>
+<h3>Description</h3>
+<p><%= @service.description %></p>
+
+<div class="row">
+	<% @service.images.each do |img| %>
+		<div class="col-sm-12 col-md-4">
+			<%= image_tag img.img.url(:m_thumb) %>
+		</div>
+	<% end %>
+</div>

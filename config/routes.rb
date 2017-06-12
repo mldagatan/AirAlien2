@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :administration do
+  get 'services/index'
+  end
+
   root 'pages#home'
 
   devise_for 	:users, 
@@ -59,9 +63,12 @@ Rails.application.routes.draw do
     get "dashboard", to: "dashboard#index", as: "dashboard"
     resources :professionals, only: [:index] do
       get "for_approval", on: :collection
-      post "approve", on: :member
+      patch "approve", on: :member
     end
     resources :service_categories, only: [:index, :new, :create, :edit, :update, :delete]
+    resources :services, only: [:index, :show] do
+      patch "status_update", on: :member      
+    end
   end
 
   get '/preload' => 'reservations#preload'

@@ -22,4 +22,16 @@ class Address < ActiveRecord::Base
   def address_type_readable
   	Address.address_types[self.address_type]
   end
+
+  def basic_address
+    "#{self.city}, #{self.state}, #{self.country}"
+  end
+
+  def display_address
+    if self.area?
+      "#{self.city}, #{self.state}, #{self.country}"
+    elsif self.location?
+      "#{self.first_address}, #{self.second_address}, #{self.city}, #{self.state}, #{self.country}"
+    end
+  end
 end

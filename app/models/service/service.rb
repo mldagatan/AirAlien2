@@ -8,8 +8,10 @@ class Service::Service < ActiveRecord::Base
   has_one :address, as: :addressable
 
   accepts_nested_attributes_for :images, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :address, reject_if: :all_blank, allow_destroy: true
 
   scope :approved, lambda {where(status: 1)}
+  scope :pending, lambda {where(status: 0)}
 
   validates :rate,
   					numericality: {
@@ -58,5 +60,17 @@ class Service::Service < ActiveRecord::Base
 
   def visit?
   	address.location?
+  end
+
+  def discounted?
+    self.discounted_rate.present?
+  end
+
+  def approved?
+    self.status == 1
+  end
+
+  def category
+    self.service_category.title
   end
 end

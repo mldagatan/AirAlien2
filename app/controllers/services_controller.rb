@@ -17,6 +17,7 @@ class ServicesController < ApplicationController
 
   def new
   	@service = current_user.services.build
+    @service.build_address
   end
 
   def create
@@ -32,6 +33,9 @@ class ServicesController < ApplicationController
   end
 
   def edit
+    if !@service.address.present?
+      @service.build_address
+    end
   end
 
   def update
@@ -57,6 +61,9 @@ class ServicesController < ApplicationController
 
   def service_params
   	params.require(:service_service).permit(:title, :description, :rate, :discounted_rate, :service_category_id, :professional_id,
+      address_attributes: [
+        :id, :address_type, :first_line, :second_line, :city, :state, :country, :zip_code
+      ],
   		images_attributes: [
   			:id, :_destroy, :img, :description
   		]

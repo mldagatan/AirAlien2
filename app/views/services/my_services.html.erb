@@ -24,6 +24,7 @@
 				<td><%= number_to_currency service.discounted_rate %></td>
 				<td><%= service.status_readable %></td>
 				<td>
+					<%= link_to "Edit", edit_my_service_path(service), class: "btn btn-xs btn-warning" %>
 					<%= link_to "Review", "#", class: "btn btn-xs btn-warning" %>
 					<%= link_to "Delete", my_service_path(service), method: :delete, data: {confirm: "are you sure you want to delete this service?"}, class: "btn btn-xs btn-danger" %>
 				</td>

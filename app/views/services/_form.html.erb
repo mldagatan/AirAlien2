@@ -5,6 +5,31 @@
 	<%= f.input :description %>
 	<%= f.input :rate %>
 	<%= f.input :discounted_rate %>
+	<h4>Service Address</h4>
+	<%= f.simple_fields_for :address do |add| %>
+		<%= add.input :address_type, as: :select, collection: Address.address_types.each_with_index.map{|t, i| [t, i]}, include_blank: false %>
+		<p><i>Selecting area will not require filling out the First Line</i></p>
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<%= add.input :first_line, as: :string %>
+			</div>
+			<div class="col-sm-12 col-md-6">
+				<%= add.input :second_line, as: :string %>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<%= add.input :city %>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<%= add.input :state %>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<%= add.input :country, include_blank: false %>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<%= add.input :postal_code %>
+			</div>
+		</div>
+	<% end %>
 	<h4>Images</h4>
 	<div id="images" class="row">
 		<%= f.simple_fields_for :images do |img| %>
