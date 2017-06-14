@@ -5,7 +5,9 @@
 	
 	<% @services.each do |service| %>
 			<div class="col-sm-12 col-md-4">
-				<%= image_tag service.images.first.img.url(:m_thumb) %>
+				<% if service.images.present? %>
+					<%= image_tag service.images.first.img.url(:m_thumb) %>
+				<% end %>
 				<h3><%= service.title %></h3>
 				<h5><i><%= service.category %></i></h5>
 				<p class="lead"><%= service.professional.fullname %></p>
