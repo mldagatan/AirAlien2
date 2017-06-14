@@ -19,7 +19,7 @@
 		<div class="col-sm-12 col-md-4">
 			<h3><%= number_to_currency @service.rate %></h3>
 			<br>
-			<% if current_user.id != @service.id %>
+			<% if user_signed_in? && current_user.id != @service.id %>
 			<h4>Book Now</h4>
 			<%= simple_form_for @booking, url: book_service_path(@service), method: :post do |f| %>
 				<%= f.input :professional_user_id, as: :hidden, input_html: {value: @service.professional.id} %>
