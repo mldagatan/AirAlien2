@@ -19,36 +19,40 @@
 		<div class="col-sm-12 col-md-4">
 			<h3><%= number_to_currency @service.rate %></h3>
 			<br>
-			<% if user_signed_in? && current_user.id != @service.id %>
-			<h4>Book Now</h4>
-			<%= simple_form_for @booking, url: book_service_path(@service), method: :post do |f| %>
-				<%= f.input :professional_user_id, as: :hidden, input_html: {value: @service.professional.id} %>
-				<%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
-				<%= f.input :service_service_id, as: :hidden, input_html: {value: @service.id} %>
+			<% if user_signed_in? %>
+				<% if current_user.id != @service.id %>
+					<h4>Book Now</h4>
+					<%= simple_form_for @booking, url: book_service_path(@service), method: :post do |f| %>
+						<%= f.input :professional_user_id, as: :hidden, input_html: {value: @service.professional.id} %>
+						<%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
+						<%= f.input :service_service_id, as: :hidden, input_html: {value: @service.id} %>
 
-				<%= f.simple_fields_for :my_answers do |fa| %>
-					<%= fa.object.question.question %>
-					<%= fa.association :answer, as: :select, collection: fa.object.question.answers, label: false, label_method: :answer, include_blank: false %>
-				<% end %>
-				
-				<hr>
-				<h5>Booking details</h5>
-				<%= f.simple_fields_for :address do |add| %>
-					<%= add.input :address_type, as: :hidden, input_html: {value: 1} %>
-					<%= add.input :first_line, as: :string %>
-					<%= add.input :second_line, as: :string %>
-					<%= add.input :city %>
-					<%= add.input :state %>
-					<%= add.input :country, include_blank: false %>
-				<% end %>
+						<%= f.simple_fields_for :my_answers do |fa| %>
+							<%= fa.object.question.question %>
+							<%= fa.association :answer, as: :select, collection: fa.object.question.answers, label: false, label_method: :answer, include_blank: false %>
+						<% end %>
+						
+						<hr>
+						<h5>Booking details</h5>
+						<%= f.simple_fields_for :address do |add| %>
+							<%= add.input :address_type, as: :hidden, input_html: {value: 1} %>
+							<%= add.input :first_line, as: :string %>
+							<%= add.input :second_line, as: :string %>
+							<%= add.input :city %>
+							<%= add.input :state %>
+							<%= add.input :country, include_blank: false %>
+						<% end %>
 
-				<%= f.input :date, as: :datetime %>
-				<%= f.input :notes, label: "Additional booking notes" %>
-				
-				<%= f.submit class: "btn btn-primary btn-lg" %>
-			<% end %>
+						<%= f.input :date, as: :datetime %>
+						<%= f.input :notes, label: "Additional booking notes" %>
+						
+						<%= f.submit class: "btn btn-primary btn-lg" %>
+					<% end %>
+				<% else %>
+					<h5>You are vieweing your own service.</h5>
+				<% end %>
 			<% else %>
-				<h5>You are currently viewing your own service.</h5>
+				<h5>You must <%= link_to "login", new_user_session_path %> to book a service.</h5>
 			<% end %>
 		</div>
 	</div>
